@@ -1,0 +1,38 @@
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/carlo/Andrey/TEC/Semestre_II_2022/Taller_Digitales/Laboratorios/Lab4/Repositorio/lab4-g03-lab4/Microcontrolador/scr/ROM/sim/ROM.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ROM
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/carlo/Andrey/TEC/Semestre_II_2022/Taller_Digitales/Laboratorios/Lab4/Repositorio/lab4-g03-lab4/Microcontrolador/scr/WCLK/WCLK_clk_wiz.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module WCLK_clk_wiz
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/carlo/Andrey/TEC/Semestre_II_2022/Taller_Digitales/Laboratorios/Lab4/Repositorio/lab4-g03-lab4/Microcontrolador/scr/WCLK/WCLK.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module WCLK
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/carlo/Andrey/TEC/Semestre_II_2022/Taller_Digitales/Laboratorios/Lab4/Repositorio/lab4-g03-lab4/Microcontrolador/Modulos/modules_Procesador_Mono_Ciclo/module_adder.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module module_adder
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/carlo/Andrey/TEC/Semestre_II_2022/Taller_Digitales/Laboratorios/Lab4/Repositorio/lab4-g03-lab4/Microcontrolador/Modulos/modules_Procesador_Mono_Ciclo/module_alu.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module module_alu
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/carlo/Andrey/TEC/Semestre_II_2022/Taller_Digitales/Laboratorios/Lab4/Repositorio/lab4-g03-lab4/Microcontrolador/Modulos/modules_Procesador_Mono_Ciclo/module_alu_decoder.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module module_alu_decoder
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/carlo/Andrey/TEC/Semestre_II_2022/Taller_Digitales/Laboratorios/Lab4/Repositorio/lab4-g03-lab4/Microcontrolador/Modulos/modules_Procesador_Mono_Ciclo/module_controller.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module module_controller
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/carlo/Andrey/TEC/Semestre_II_2022/Taller_Digitales/Laboratorios/Lab4/Repositorio/lab4-g03-lab4/Microcontrolador/Modulos/modules_Procesador_Mono_Ciclo/module_datapath.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module module_datapath
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/carlo/Andrey/TEC/Semestre_II_2022/Taller_Digitales/Laboratorios/Lab4/Repositorio/lab4-g03-lab4/Microcontrolador/Modulos/modules_Procesador_Mono_Ciclo/module_extend.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module module_extend
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/carlo/Andrey/TEC/Semestre_II_2022/Taller_Digitales/Laboratorios/Lab4/Repositorio/lab4-g03-lab4/Microcontrolador/Modulos/modules_Procesador_Mono_Ciclo/module_flopr.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module module_flopr
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/carlo/Andrey/TEC/Semestre_II_2022/Taller_Digitales/Laboratorios/Lab4/Repositorio/lab4-g03-lab4/Microcontrolador/Modulos/modules_Procesador_Mono_Ciclo/module_main_decoder.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module module_main_decoder
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/carlo/Andrey/TEC/Semestre_II_2022/Taller_Digitales/Laboratorios/Lab4/Repositorio/lab4-g03-lab4/Microcontrolador/Modulos/modules_Procesador_Mono_Ciclo/module_memoria.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module module_memoria
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/carlo/Andrey/TEC/Semestre_II_2022/Taller_Digitales/Laboratorios/Lab4/Repositorio/lab4-g03-lab4/Microcontrolador/Modulos/modules_Procesador_Mono_Ciclo/module_mux2a1.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module module_mux2a1
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/carlo/Andrey/TEC/Semestre_II_2022/Taller_Digitales/Laboratorios/Lab4/Repositorio/lab4-g03-lab4/Microcontrolador/Modulos/modules_Procesador_Mono_Ciclo/module_mux3a1.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module module_mux3a1
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/carlo/Andrey/TEC/Semestre_II_2022/Taller_Digitales/Laboratorios/Lab4/Repositorio/lab4-g03-lab4/Microcontrolador/Modulos/modules_Procesador_Mono_Ciclo/module_regfile.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module module_regfile
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/carlo/Andrey/TEC/Semestre_II_2022/Taller_Digitales/Laboratorios/Lab4/Repositorio/lab4-g03-lab4/Microcontrolador/Modulos/modules_Procesador_Mono_Ciclo/module_single_cycle_processor.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module module_single_cycle_processor
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/carlo/Andrey/TEC/Semestre_II_2022/Taller_Digitales/Laboratorios/Lab4/Repositorio/lab4-g03-lab4/Microcontrolador/Modulos/modules_Procesador_Mono_Ciclo/top_singlecycle_processor.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module top_singlecycle_processor
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/carlo/Andrey/TEC/Semestre_II_2022/Taller_Digitales/Laboratorios/Lab4/Repositorio/lab4-g03-lab4/Microcontrolador/Modulos/modules_Procesador_Mono_Ciclo/Simulacion/tb_singlecycle_processor.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module tb_singlecycle_processor
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/carlo/Andrey/TEC/Semestre_II_2022/Taller_Digitales/Laboratorios/Lab4/Repositorio/lab4-g03-lab4/Microcontrolador/Proyectos/Procesador_Mono_Ciclo_v2/vivado_project.sim/sim_1/behav/xsim/glbl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module glbl
