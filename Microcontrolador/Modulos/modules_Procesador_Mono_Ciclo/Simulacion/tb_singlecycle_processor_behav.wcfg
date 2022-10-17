@@ -1,0 +1,371 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="tb_singlecycle_processor_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="glbl" />
+            <top_module name="tb_singlecycle_processor" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="7627522586fs"></ZoomStartTime>
+      <ZoomEndTime time="8649196881fs"></ZoomEndTime>
+      <Cursor1Time time="8195000000fs"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="250"></NameColumnWidth>
+      <ValueColumnWidth column_width="176"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="15" />
+   <wave_markers>
+      <marker time="6495000000" label="" />
+      <marker time="6595000000" label="" />
+      <marker time="6695000000" label="" />
+      <marker time="6795000000" label="" />
+      <marker time="6895000000" label="" />
+      <marker time="6995000000" label="" />
+      <marker time="7095000000" label="" />
+      <marker time="7195000000" label="" />
+      <marker time="7295000000" label="" />
+      <marker time="7395000000" label="" />
+      <marker time="7795000000" label="" />
+      <marker time="7895000000" label="" />
+      <marker time="7995000000" label="" />
+      <marker time="8095000000" label="" />
+      <marker time="8195000000" label="" />
+      <marker time="7695000000" label="" />
+      <marker time="7595000000" label="" />
+      <marker time="7602289000" label="" />
+      <marker time="7495000000" label="" />
+      <marker time="8195000000" label="" />
+      <marker time="7695000000" label="" />
+   </wave_markers>
+   <wvobject fp_name="/tb_singlecycle_processor/top_procesador_mono/instance_name/clk_out1" type="logic">
+      <obj_property name="ElementShortName">clk_out1</obj_property>
+      <obj_property name="ObjectShortName">clk_out1</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_singlecycle_processor/locked" type="logic">
+      <obj_property name="ElementShortName">locked</obj_property>
+      <obj_property name="ObjectShortName">locked</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_singlecycle_processor/top_procesador_mono/procesador_monociclo/datapath/instr_i" type="array">
+      <obj_property name="ElementShortName">instr_i[31:0]</obj_property>
+      <obj_property name="ObjectShortName">instr_i[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_singlecycle_processor/top_procesador_mono/pc" type="array">
+      <obj_property name="ElementShortName">pc[31:0]</obj_property>
+      <obj_property name="ObjectShortName">pc[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_singlecycle_processor/top_procesador_mono/RAM_monociclo/addr_i" type="array">
+      <obj_property name="ElementShortName">addr_i[31:0]</obj_property>
+      <obj_property name="ObjectShortName">addr_i[31:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_singlecycle_processor/top_procesador_mono/RAM_monociclo/data_out_o" type="array">
+      <obj_property name="ElementShortName">data_out_o[31:0]</obj_property>
+      <obj_property name="ObjectShortName">data_out_o[31:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_singlecycle_processor/top_procesador_mono/RAM_monociclo/memoria" type="array">
+      <obj_property name="ElementShortName">memoria[64:0][31:0]</obj_property>
+      <obj_property name="ObjectShortName">memoria[64:0][31:0]</obj_property>
+      <obj_property name="isExpanded"></obj_property>
+      <wvobject fp_name="/tb_singlecycle_processor/top_procesador_mono/RAM_monociclo/memoria[64]" type="array">
+         <obj_property name="ElementShortName">[64][31:0]</obj_property>
+         <obj_property name="ObjectShortName">[64][31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_singlecycle_processor/top_procesador_mono/RAM_monociclo/memoria[63]" type="array">
+         <obj_property name="ElementShortName">[63][31:0]</obj_property>
+         <obj_property name="ObjectShortName">[63][31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_singlecycle_processor/top_procesador_mono/RAM_monociclo/memoria[62]" type="array">
+         <obj_property name="ElementShortName">[62][31:0]</obj_property>
+         <obj_property name="ObjectShortName">[62][31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_singlecycle_processor/top_procesador_mono/RAM_monociclo/memoria[61]" type="array">
+         <obj_property name="ElementShortName">[61][31:0]</obj_property>
+         <obj_property name="ObjectShortName">[61][31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_singlecycle_processor/top_procesador_mono/RAM_monociclo/memoria[60]" type="array">
+         <obj_property name="ElementShortName">[60][31:0]</obj_property>
+         <obj_property name="ObjectShortName">[60][31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_singlecycle_processor/top_procesador_mono/RAM_monociclo/memoria[59]" type="array">
+         <obj_property name="ElementShortName">[59][31:0]</obj_property>
+         <obj_property name="ObjectShortName">[59][31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_singlecycle_processor/top_procesador_mono/RAM_monociclo/memoria[58]" type="array">
+         <obj_property name="ElementShortName">[58][31:0]</obj_property>
+         <obj_property name="ObjectShortName">[58][31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_singlecycle_processor/top_procesador_mono/RAM_monociclo/memoria[57]" type="array">
+         <obj_property name="ElementShortName">[57][31:0]</obj_property>
+         <obj_property name="ObjectShortName">[57][31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_singlecycle_processor/top_procesador_mono/RAM_monociclo/memoria[56]" type="array">
+         <obj_property name="ElementShortName">[56][31:0]</obj_property>
+         <obj_property name="ObjectShortName">[56][31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_singlecycle_processor/top_procesador_mono/RAM_monociclo/memoria[55]" type="array">
+         <obj_property name="ElementShortName">[55][31:0]</obj_property>
+         <obj_property name="ObjectShortName">[55][31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_singlecycle_processor/top_procesador_mono/RAM_monociclo/memoria[54]" type="array">
+         <obj_property name="ElementShortName">[54][31:0]</obj_property>
+         <obj_property name="ObjectShortName">[54][31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_singlecycle_processor/top_procesador_mono/RAM_monociclo/memoria[53]" type="array">
+         <obj_property name="ElementShortName">[53][31:0]</obj_property>
+         <obj_property name="ObjectShortName">[53][31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_singlecycle_processor/top_procesador_mono/RAM_monociclo/memoria[52]" type="array">
+         <obj_property name="ElementShortName">[52][31:0]</obj_property>
+         <obj_property name="ObjectShortName">[52][31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_singlecycle_processor/top_procesador_mono/RAM_monociclo/memoria[51]" type="array">
+         <obj_property name="ElementShortName">[51][31:0]</obj_property>
+         <obj_property name="ObjectShortName">[51][31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_singlecycle_processor/top_procesador_mono/RAM_monociclo/memoria[50]" type="array">
+         <obj_property name="ElementShortName">[50][31:0]</obj_property>
+         <obj_property name="ObjectShortName">[50][31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_singlecycle_processor/top_procesador_mono/RAM_monociclo/memoria[49]" type="array">
+         <obj_property name="ElementShortName">[49][31:0]</obj_property>
+         <obj_property name="ObjectShortName">[49][31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_singlecycle_processor/top_procesador_mono/RAM_monociclo/memoria[48]" type="array">
+         <obj_property name="ElementShortName">[48][31:0]</obj_property>
+         <obj_property name="ObjectShortName">[48][31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_singlecycle_processor/top_procesador_mono/RAM_monociclo/memoria[47]" type="array">
+         <obj_property name="ElementShortName">[47][31:0]</obj_property>
+         <obj_property name="ObjectShortName">[47][31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_singlecycle_processor/top_procesador_mono/RAM_monociclo/memoria[46]" type="array">
+         <obj_property name="ElementShortName">[46][31:0]</obj_property>
+         <obj_property name="ObjectShortName">[46][31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_singlecycle_processor/top_procesador_mono/RAM_monociclo/memoria[45]" type="array">
+         <obj_property name="ElementShortName">[45][31:0]</obj_property>
+         <obj_property name="ObjectShortName">[45][31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_singlecycle_processor/top_procesador_mono/RAM_monociclo/memoria[44]" type="array">
+         <obj_property name="ElementShortName">[44][31:0]</obj_property>
+         <obj_property name="ObjectShortName">[44][31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_singlecycle_processor/top_procesador_mono/RAM_monociclo/memoria[43]" type="array">
+         <obj_property name="ElementShortName">[43][31:0]</obj_property>
+         <obj_property name="ObjectShortName">[43][31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_singlecycle_processor/top_procesador_mono/RAM_monociclo/memoria[42]" type="array">
+         <obj_property name="ElementShortName">[42][31:0]</obj_property>
+         <obj_property name="ObjectShortName">[42][31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_singlecycle_processor/top_procesador_mono/RAM_monociclo/memoria[41]" type="array">
+         <obj_property name="ElementShortName">[41][31:0]</obj_property>
+         <obj_property name="ObjectShortName">[41][31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_singlecycle_processor/top_procesador_mono/RAM_monociclo/memoria[40]" type="array">
+         <obj_property name="ElementShortName">[40][31:0]</obj_property>
+         <obj_property name="ObjectShortName">[40][31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_singlecycle_processor/top_procesador_mono/RAM_monociclo/memoria[39]" type="array">
+         <obj_property name="ElementShortName">[39][31:0]</obj_property>
+         <obj_property name="ObjectShortName">[39][31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_singlecycle_processor/top_procesador_mono/RAM_monociclo/memoria[38]" type="array">
+         <obj_property name="ElementShortName">[38][31:0]</obj_property>
+         <obj_property name="ObjectShortName">[38][31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_singlecycle_processor/top_procesador_mono/RAM_monociclo/memoria[37]" type="array">
+         <obj_property name="ElementShortName">[37][31:0]</obj_property>
+         <obj_property name="ObjectShortName">[37][31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_singlecycle_processor/top_procesador_mono/RAM_monociclo/memoria[36]" type="array">
+         <obj_property name="ElementShortName">[36][31:0]</obj_property>
+         <obj_property name="ObjectShortName">[36][31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_singlecycle_processor/top_procesador_mono/RAM_monociclo/memoria[35]" type="array">
+         <obj_property name="ElementShortName">[35][31:0]</obj_property>
+         <obj_property name="ObjectShortName">[35][31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_singlecycle_processor/top_procesador_mono/RAM_monociclo/memoria[34]" type="array">
+         <obj_property name="ElementShortName">[34][31:0]</obj_property>
+         <obj_property name="ObjectShortName">[34][31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_singlecycle_processor/top_procesador_mono/RAM_monociclo/memoria[33]" type="array">
+         <obj_property name="ElementShortName">[33][31:0]</obj_property>
+         <obj_property name="ObjectShortName">[33][31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_singlecycle_processor/top_procesador_mono/RAM_monociclo/memoria[32]" type="array">
+         <obj_property name="ElementShortName">[32][31:0]</obj_property>
+         <obj_property name="ObjectShortName">[32][31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_singlecycle_processor/top_procesador_mono/RAM_monociclo/memoria[31]" type="array">
+         <obj_property name="ElementShortName">[31][31:0]</obj_property>
+         <obj_property name="ObjectShortName">[31][31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_singlecycle_processor/top_procesador_mono/RAM_monociclo/memoria[30]" type="array">
+         <obj_property name="ElementShortName">[30][31:0]</obj_property>
+         <obj_property name="ObjectShortName">[30][31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_singlecycle_processor/top_procesador_mono/RAM_monociclo/memoria[29]" type="array">
+         <obj_property name="ElementShortName">[29][31:0]</obj_property>
+         <obj_property name="ObjectShortName">[29][31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_singlecycle_processor/top_procesador_mono/RAM_monociclo/memoria[28]" type="array">
+         <obj_property name="ElementShortName">[28][31:0]</obj_property>
+         <obj_property name="ObjectShortName">[28][31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_singlecycle_processor/top_procesador_mono/RAM_monociclo/memoria[27]" type="array">
+         <obj_property name="ElementShortName">[27][31:0]</obj_property>
+         <obj_property name="ObjectShortName">[27][31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_singlecycle_processor/top_procesador_mono/RAM_monociclo/memoria[26]" type="array">
+         <obj_property name="ElementShortName">[26][31:0]</obj_property>
+         <obj_property name="ObjectShortName">[26][31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_singlecycle_processor/top_procesador_mono/RAM_monociclo/memoria[25]" type="array">
+         <obj_property name="ElementShortName">[25][31:0]</obj_property>
+         <obj_property name="ObjectShortName">[25][31:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_singlecycle_processor/top_procesador_mono/RAM_monociclo/memoria[24]" type="array">
+         <obj_property name="ElementShortName">[24][31:0]</obj_property>
+         <obj_property name="ObjectShortName">[24][31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_singlecycle_processor/top_procesador_mono/RAM_monociclo/memoria[23]" type="array">
+         <obj_property name="ElementShortName">[23][31:0]</obj_property>
+         <obj_property name="ObjectShortName">[23][31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_singlecycle_processor/top_procesador_mono/RAM_monociclo/memoria[22]" type="array">
+         <obj_property name="ElementShortName">[22][31:0]</obj_property>
+         <obj_property name="ObjectShortName">[22][31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_singlecycle_processor/top_procesador_mono/RAM_monociclo/memoria[21]" type="array">
+         <obj_property name="ElementShortName">[21][31:0]</obj_property>
+         <obj_property name="ObjectShortName">[21][31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_singlecycle_processor/top_procesador_mono/RAM_monociclo/memoria[20]" type="array">
+         <obj_property name="ElementShortName">[20][31:0]</obj_property>
+         <obj_property name="ObjectShortName">[20][31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_singlecycle_processor/top_procesador_mono/RAM_monociclo/memoria[19]" type="array">
+         <obj_property name="ElementShortName">[19][31:0]</obj_property>
+         <obj_property name="ObjectShortName">[19][31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_singlecycle_processor/top_procesador_mono/RAM_monociclo/memoria[18]" type="array">
+         <obj_property name="ElementShortName">[18][31:0]</obj_property>
+         <obj_property name="ObjectShortName">[18][31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_singlecycle_processor/top_procesador_mono/RAM_monociclo/memoria[17]" type="array">
+         <obj_property name="ElementShortName">[17][31:0]</obj_property>
+         <obj_property name="ObjectShortName">[17][31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_singlecycle_processor/top_procesador_mono/RAM_monociclo/memoria[16]" type="array">
+         <obj_property name="ElementShortName">[16][31:0]</obj_property>
+         <obj_property name="ObjectShortName">[16][31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_singlecycle_processor/top_procesador_mono/RAM_monociclo/memoria[15]" type="array">
+         <obj_property name="ElementShortName">[15][31:0]</obj_property>
+         <obj_property name="ObjectShortName">[15][31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_singlecycle_processor/top_procesador_mono/RAM_monociclo/memoria[14]" type="array">
+         <obj_property name="ElementShortName">[14][31:0]</obj_property>
+         <obj_property name="ObjectShortName">[14][31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_singlecycle_processor/top_procesador_mono/RAM_monociclo/memoria[13]" type="array">
+         <obj_property name="ElementShortName">[13][31:0]</obj_property>
+         <obj_property name="ObjectShortName">[13][31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_singlecycle_processor/top_procesador_mono/RAM_monociclo/memoria[12]" type="array">
+         <obj_property name="ElementShortName">[12][31:0]</obj_property>
+         <obj_property name="ObjectShortName">[12][31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_singlecycle_processor/top_procesador_mono/RAM_monociclo/memoria[11]" type="array">
+         <obj_property name="ElementShortName">[11][31:0]</obj_property>
+         <obj_property name="ObjectShortName">[11][31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_singlecycle_processor/top_procesador_mono/RAM_monociclo/memoria[10]" type="array">
+         <obj_property name="ElementShortName">[10][31:0]</obj_property>
+         <obj_property name="ObjectShortName">[10][31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_singlecycle_processor/top_procesador_mono/RAM_monociclo/memoria[9]" type="array">
+         <obj_property name="ElementShortName">[9][31:0]</obj_property>
+         <obj_property name="ObjectShortName">[9][31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_singlecycle_processor/top_procesador_mono/RAM_monociclo/memoria[8]" type="array">
+         <obj_property name="ElementShortName">[8][31:0]</obj_property>
+         <obj_property name="ObjectShortName">[8][31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_singlecycle_processor/top_procesador_mono/RAM_monociclo/memoria[7]" type="array">
+         <obj_property name="ElementShortName">[7][31:0]</obj_property>
+         <obj_property name="ObjectShortName">[7][31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_singlecycle_processor/top_procesador_mono/RAM_monociclo/memoria[6]" type="array">
+         <obj_property name="ElementShortName">[6][31:0]</obj_property>
+         <obj_property name="ObjectShortName">[6][31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_singlecycle_processor/top_procesador_mono/RAM_monociclo/memoria[5]" type="array">
+         <obj_property name="ElementShortName">[5][31:0]</obj_property>
+         <obj_property name="ObjectShortName">[5][31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_singlecycle_processor/top_procesador_mono/RAM_monociclo/memoria[4]" type="array">
+         <obj_property name="ElementShortName">[4][31:0]</obj_property>
+         <obj_property name="ObjectShortName">[4][31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_singlecycle_processor/top_procesador_mono/RAM_monociclo/memoria[3]" type="array">
+         <obj_property name="ElementShortName">[3][31:0]</obj_property>
+         <obj_property name="ObjectShortName">[3][31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_singlecycle_processor/top_procesador_mono/RAM_monociclo/memoria[2]" type="array">
+         <obj_property name="ElementShortName">[2][31:0]</obj_property>
+         <obj_property name="ObjectShortName">[2][31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_singlecycle_processor/top_procesador_mono/RAM_monociclo/memoria[1]" type="array">
+         <obj_property name="ElementShortName">[1][31:0]</obj_property>
+         <obj_property name="ObjectShortName">[1][31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_singlecycle_processor/top_procesador_mono/RAM_monociclo/memoria[0]" type="array">
+         <obj_property name="ElementShortName">[0][31:0]</obj_property>
+         <obj_property name="ObjectShortName">[0][31:0]</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject fp_name="/tb_singlecycle_processor/top_procesador_mono/procesador_monociclo/datapath/register_file/rf" type="array">
+      <obj_property name="ElementShortName">rf[31:0][31:0]</obj_property>
+      <obj_property name="ObjectShortName">rf[31:0][31:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_singlecycle_processor/top_procesador_mono/procesador_monociclo/datapath/alu/alucontrol_i" type="array">
+      <obj_property name="ElementShortName">alucontrol_i[2:0]</obj_property>
+      <obj_property name="ObjectShortName">alucontrol_i[2:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_singlecycle_processor/top_procesador_mono/procesador_monociclo/controlador_principal/alu_decoder/aluop_i" type="array">
+      <obj_property name="ElementShortName">aluop_i[1:0]</obj_property>
+      <obj_property name="ObjectShortName">aluop_i[1:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_singlecycle_processor/top_procesador_mono/procesador_monociclo/controlador_principal/alu_decoder/alucontrol_o" type="array">
+      <obj_property name="ElementShortName">alucontrol_o[2:0]</obj_property>
+      <obj_property name="ObjectShortName">alucontrol_o[2:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_singlecycle_processor/top_procesador_mono/procesador_monociclo/controlador_principal/main_decoder/op_i" type="array">
+      <obj_property name="ElementShortName">op_i[6:0]</obj_property>
+      <obj_property name="ObjectShortName">op_i[6:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_singlecycle_processor/top_procesador_mono/procesador_monociclo/datapath/register_file/a1_i" type="array">
+      <obj_property name="ElementShortName">a1_i[4:0]</obj_property>
+      <obj_property name="ObjectShortName">a1_i[4:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_singlecycle_processor/top_procesador_mono/procesador_monociclo/datapath/register_file/a2_i" type="array">
+      <obj_property name="ElementShortName">a2_i[4:0]</obj_property>
+      <obj_property name="ObjectShortName">a2_i[4:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_singlecycle_processor/top_procesador_mono/procesador_monociclo/datapath/register_file/a3_i" type="array">
+      <obj_property name="ElementShortName">a3_i[4:0]</obj_property>
+      <obj_property name="ObjectShortName">a3_i[4:0]</obj_property>
+   </wvobject>
+</wave_config>
