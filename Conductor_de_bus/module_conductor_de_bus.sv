@@ -29,6 +29,7 @@ module module_conductor_de_bus(
                           do_timer_i,
                           do_spi_i,
                           do_ram_i,
+                          do_rom_i,
     output logic          we_uart_o,
                           we_spi_o,
                           we_teclado_o,
@@ -36,6 +37,7 @@ module module_conductor_de_bus(
                           we_leds_o,
                           we_timer_o,
                           we_ram_o,
+                          we_rom_o,
                  [31 : 0] di_o
     );
     //DEMUX
@@ -48,8 +50,9 @@ module module_conductor_de_bus(
             we_leds_o       = 0;
             we_timer_o      = 0;
             we_ram_o        = 0;
+            we_rom_o        = we_i;
         end
-        if((addr_i >= 32'h1000) && (addr_i<=32'h13FC))begin
+        else if((addr_i >= 32'h1000) && (addr_i<=32'h13FC))begin
             we_uart_o       = 0;
             we_spi_o        = 0;
             we_teclado_o    = 0;
@@ -57,8 +60,9 @@ module module_conductor_de_bus(
             we_leds_o       = 0;
             we_timer_o      = 0;
             we_ram_o        = we_i;
+            we_rom_o        = 0;
         end
-        if((addr_i >= 32'h2000) && (addr_i < 32'h2004))begin
+        else if((addr_i >= 32'h2000) && (addr_i < 32'h2004))begin
             we_uart_o       = 0;
             we_spi_o        = 0;
             we_teclado_o    = we_i;
@@ -66,8 +70,9 @@ module module_conductor_de_bus(
             we_leds_o       = 0;
             we_timer_o      = 0;
             we_ram_o        = 0;
+            we_rom_o        = 0;
         end
-        if((addr_i >= 32'h2004) && (addr_i < 32'h2008))begin
+        else if((addr_i >= 32'h2004) && (addr_i < 32'h2008))begin
             we_uart_o       = 0;
             we_spi_o        = 0;
             we_teclado_o    = 0;
@@ -75,8 +80,9 @@ module module_conductor_de_bus(
             we_leds_o       = 0;
             we_timer_o      = 0;
             we_ram_o        = 0;
+            we_rom_o        = 0;
         end
-        if((addr_i >= 32'h2008) && (addr_i < 32'h200C))begin
+        else if((addr_i >= 32'h2008) && (addr_i < 32'h200C))begin
             we_uart_o       = 0;
             we_spi_o        = 0;
             we_teclado_o    = 0;
@@ -84,8 +90,9 @@ module module_conductor_de_bus(
             we_leds_o       = we_i;
             we_timer_o      = 0;
             we_ram_o        = 0;
+            we_rom_o        = 0;
         end
-        if((addr_i >= 32'h200C) && (addr_i < 32'h2010))begin
+        else if((addr_i >= 32'h200C) && (addr_i < 32'h2010))begin
             we_uart_o       = 0;
             we_spi_o        = 0;
             we_teclado_o    = 0;
@@ -93,8 +100,9 @@ module module_conductor_de_bus(
             we_leds_o       = 0;
             we_timer_o      = 0;
             we_ram_o        = 0;
+            we_rom_o        = 0;
         end
-        if((addr_i >= 32'h2010) && (addr_i < 32'h2014))begin
+        else if((addr_i >= 32'h2010) && (addr_i < 32'h2014))begin
             we_uart_o       = 0;
             we_spi_o        = 0;
             we_teclado_o    = 0;
@@ -102,8 +110,9 @@ module module_conductor_de_bus(
             we_leds_o       = 0;
             we_timer_o      = we_i;
             we_ram_o        = 0;
+            we_rom_o        = 0;
         end
-        if((addr_i >= 32'h2020) && (addr_i < 32'h2028))begin
+        else if((addr_i >= 32'h2020) && (addr_i < 32'h2028))begin
             we_uart_o       = we_i;
             we_spi_o        = 0;
             we_teclado_o    = 0;
@@ -111,8 +120,9 @@ module module_conductor_de_bus(
             we_leds_o       = 0;
             we_timer_o      = 0;
             we_ram_o        = 0;
+            we_rom_o        = 0;
         end
-        if((addr_i >= 32'h2100) && (addr_i < 32'h2104))begin
+        else if((addr_i >= 32'h2100) && (addr_i < 32'h2104))begin
             we_uart_o       = 0;
             we_spi_o        = we_i;
             we_teclado_o    = 0;
@@ -120,8 +130,9 @@ module module_conductor_de_bus(
             we_leds_o       = 0;
             we_timer_o      = 0;
             we_ram_o        = 0;
+            we_rom_o        = 0;
         end
-        if((addr_i >= 32'h2200))begin
+        else if((addr_i >= 32'h2200))begin
             we_uart_o       = 0;
             we_spi_o        = we_i;
             we_teclado_o    = 0;
@@ -129,39 +140,53 @@ module module_conductor_de_bus(
             we_leds_o       = 0;
             we_timer_o      = 0;
             we_ram_o        = 0;
+            we_rom_o        = 0;
+        end
+        else begin
+            we_uart_o       = 0;
+            we_spi_o        = 0;
+            we_teclado_o    = 0;
+            we_segmentos_o  = 0;
+            we_leds_o       = 0;
+            we_timer_o      = 0;
+            we_ram_o        = 0;
+            we_rom_o        = 0;
         end
     end
     //MUX
     always_comb begin
-        if((addr_i >= 0) && (addr_i<=32'h07FC))begin
-            di_o            = 0;    
+        if((addr_i >= 0) && (addr_i <= 32'h07FC))begin
+            di_o            = do_rom_i;    
         end
-        if((addr_i >= 32'h1000) && (addr_i<=32'h13FC))begin
+        else if((addr_i >= 32'h1000) && (addr_i <= 32'h13FC))begin
             di_o            = do_ram_i;
         end
-        if((addr_i >= 32'h2000) && (addr_i < 32'h2004))begin
+        else if((addr_i >= 32'h2000) && (addr_i < 32'h2004))begin
             di_o            = do_teclado_i;
         end
-        if((addr_i >= 32'h2004) && (addr_i < 32'h2008))begin
+        else if((addr_i >= 32'h2004) && (addr_i < 32'h2008))begin
             di_o            = do_switches_i;    
         end
-        if((addr_i >= 32'h2008) && (addr_i < 32'h200C))begin
+        else if((addr_i >= 32'h2008) && (addr_i < 32'h200C))begin
             di_o            = 0;
         end
-        if((addr_i >= 32'h200C) && (addr_i < 32'h2010))begin
+        else if((addr_i >= 32'h200C) && (addr_i < 32'h2010))begin
             di_o            = 0;
         end
-        if((addr_i >= 32'h2010) && (addr_i < 32'h2014))begin
+        else if((addr_i >= 32'h2010) && (addr_i < 32'h2014))begin
             di_o            = do_timer_i;
         end
-        if((addr_i >= 32'h2020) && (addr_i < 32'h2028))begin
+        else if((addr_i >= 32'h2020) && (addr_i < 32'h2028))begin
             di_o            = do_uart_i;
         end
-        if((addr_i >= 32'h2100) && (addr_i < 32'h2104))begin
+        else if((addr_i >= 32'h2100) && (addr_i < 32'h2104))begin
             di_o            = do_spi_i;
         end
-        if((addr_i >= 32'h2200))begin
+        else if((addr_i >= 32'h2200))begin
             di_o            = do_spi_i;
+        end
+        else begin
+            di_o            = 0;
         end
     end
     
