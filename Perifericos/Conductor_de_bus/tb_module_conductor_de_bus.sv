@@ -28,6 +28,7 @@ logic [31 : 0]  do_switches_i;
 logic [31 : 0]  do_teclado_i;
 logic [31 : 0]  do_timer_i;
 logic [31 : 0]  do_spi_i;
+logic [31 : 0]  do_rom_i;
 logic [31 : 0]  do_ram_i;
 logic           we_uart_o,
                 we_spi_o,
@@ -42,6 +43,7 @@ module_conductor_de_bus driver(
                 .addr_i             (addr_i),
                 .do_uart_i          (do_uart_i),
                 .do_switches_i      (do_switches_i),
+                .do_rom_i           (do_rom_i),
                 .do_teclado_i       (do_teclado_i),
                 .do_timer_i         (do_timer_i),
                 .do_spi_i           (do_spi_i),
@@ -64,6 +66,7 @@ initial begin
     do_timer_i     = 12;
     do_spi_i       = 13;
     do_ram_i       = 14;
+    do_rom_i       = 15;
     #5
     addr_i = 1;
     #5
