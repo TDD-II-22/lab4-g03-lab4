@@ -88,7 +88,7 @@ module module_decoder_encoder(
                 8'h49:ascii_code_o = 8'h2E;//.
                 8'h41:ascii_code_o = 8'h2C;//,
                 8'h29:ascii_code_o = 8'h20;//space
-              default:ascii_code_o = 8'h5E;//^                  
+              default:ascii_code_o = 8'h00;//^                  
             endcase
         end
     end
