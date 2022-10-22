@@ -30,7 +30,6 @@ module module_teclado(
     output logic [31 : 0] data_o
     );
     
-    logic clk;
     logic [31:0] long_keycodeout;
     logic        ps2_code_new;
     logic [7:0]  ps2_code;
@@ -53,7 +52,7 @@ module module_teclado(
     );
     
     module_reg_teclado reg_teclado(
-        .clk_i(clk),
+        .clk_i(clk_i),
         .rst_i(rst_i),
         .we_micro_i(we_i),
         .we_teclado_i(ps2_code_new),             
