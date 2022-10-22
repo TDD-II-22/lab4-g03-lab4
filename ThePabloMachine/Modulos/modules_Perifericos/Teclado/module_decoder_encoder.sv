@@ -29,6 +29,7 @@ module module_decoder_encoder(
         if( ps2_code_new_i ) begin
             case(ps2_code_i)
                 8'h76:ascii_code_o = 8'h7E;//esc//~
+		8'h66:ascii_code_o = 8'h08;//backspace
                 8'h05:ascii_code_o = 8'h21;//F1//!
                 8'h06:ascii_code_o = 8'h23;//F2//#
                 8'h04:ascii_code_o = 8'h25;//F3//%
