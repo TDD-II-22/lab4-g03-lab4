@@ -38,7 +38,7 @@ module module_timer(
             end
             else begin
                 if( timer > 0) begin
-                    timer <= timer-1'b1;
+                    timer <= timer - 1'b1;
                 end
                 else begin
                     timer <= timer;
@@ -46,5 +46,8 @@ module module_timer(
             end
         end
     end
-    
+    //Logica de salida
+    always_comb begin
+        data_o = timer;
+    end
 endmodule
