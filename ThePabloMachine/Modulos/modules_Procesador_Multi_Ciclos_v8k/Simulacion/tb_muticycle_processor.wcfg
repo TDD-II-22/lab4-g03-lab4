@@ -1,0 +1,325 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="tb_singlecycle_processor_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="glbl" />
+            <top_module name="tb_singlecycle_processor" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="8257461542fs"></ZoomStartTime>
+      <ZoomEndTime time="11557896834fs"></ZoomEndTime>
+      <Cursor1Time time="16509640000fs"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="168"></NameColumnWidth>
+      <ValueColumnWidth column_width="90"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="10" />
+   <wave_markers>
+      <marker time="8495000000" label="" />
+      <marker time="8895000000" label="" />
+      <marker time="1054895000000" label="" />
+   </wave_markers>
+   <wvobject fp_name="/tb_singlecycle_processor/top_procesador_multi/clk" type="logic">
+      <obj_property name="ElementShortName">clk</obj_property>
+      <obj_property name="ObjectShortName">clk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_singlecycle_processor/top_procesador_multi/procesador_multiciclo/datapath/instr" type="array">
+      <obj_property name="ElementShortName">instr[31:0]</obj_property>
+      <obj_property name="ObjectShortName">instr[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_singlecycle_processor/top_procesador_multi/procesador_multiciclo/controlador_principal/maquina_estados_multiciclo/state" type="array">
+      <obj_property name="ElementShortName">state[3:0]</obj_property>
+      <obj_property name="ObjectShortName">state[3:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_singlecycle_processor/top_procesador_multi/procesador_multiciclo/controlador_principal/maquina_estados_multiciclo/op_i" type="array">
+      <obj_property name="ElementShortName">op_i[6:0]</obj_property>
+      <obj_property name="ObjectShortName">op_i[6:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_singlecycle_processor/top_procesador_multi/programa/RAM_multiciclo/memoria" type="array">
+      <obj_property name="ElementShortName">memoria[63:0][32:0]</obj_property>
+      <obj_property name="ObjectShortName">memoria[63:0][32:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_singlecycle_processor/top_procesador_multi/procesador_multiciclo/datapath/register_file/register_file" type="array">
+      <obj_property name="ElementShortName">register_file[31:0][31:0]</obj_property>
+      <obj_property name="ObjectShortName">register_file[31:0][31:0]</obj_property>
+      <wvobject fp_name="/tb_singlecycle_processor/top_procesador_multi/procesador_multiciclo/datapath/register_file/register_file[31]" type="array">
+         <obj_property name="ElementShortName">[31][31:0]</obj_property>
+         <obj_property name="ObjectShortName">[31][31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_singlecycle_processor/top_procesador_multi/procesador_multiciclo/datapath/register_file/register_file[30]" type="array">
+         <obj_property name="ElementShortName">[30][31:0]</obj_property>
+         <obj_property name="ObjectShortName">[30][31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_singlecycle_processor/top_procesador_multi/procesador_multiciclo/datapath/register_file/register_file[29]" type="array">
+         <obj_property name="ElementShortName">[29][31:0]</obj_property>
+         <obj_property name="ObjectShortName">[29][31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_singlecycle_processor/top_procesador_multi/procesador_multiciclo/datapath/register_file/register_file[28]" type="array">
+         <obj_property name="ElementShortName">[28][31:0]</obj_property>
+         <obj_property name="ObjectShortName">[28][31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_singlecycle_processor/top_procesador_multi/procesador_multiciclo/datapath/register_file/register_file[27]" type="array">
+         <obj_property name="ElementShortName">[27][31:0]</obj_property>
+         <obj_property name="ObjectShortName">[27][31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_singlecycle_processor/top_procesador_multi/procesador_multiciclo/datapath/register_file/register_file[26]" type="array">
+         <obj_property name="ElementShortName">[26][31:0]</obj_property>
+         <obj_property name="ObjectShortName">[26][31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_singlecycle_processor/top_procesador_multi/procesador_multiciclo/datapath/register_file/register_file[25]" type="array">
+         <obj_property name="ElementShortName">[25][31:0]</obj_property>
+         <obj_property name="ObjectShortName">[25][31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_singlecycle_processor/top_procesador_multi/procesador_multiciclo/datapath/register_file/register_file[24]" type="array">
+         <obj_property name="ElementShortName">[24][31:0]</obj_property>
+         <obj_property name="ObjectShortName">[24][31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_singlecycle_processor/top_procesador_multi/procesador_multiciclo/datapath/register_file/register_file[23]" type="array">
+         <obj_property name="ElementShortName">[23][31:0]</obj_property>
+         <obj_property name="ObjectShortName">[23][31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_singlecycle_processor/top_procesador_multi/procesador_multiciclo/datapath/register_file/register_file[22]" type="array">
+         <obj_property name="ElementShortName">[22][31:0]</obj_property>
+         <obj_property name="ObjectShortName">[22][31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_singlecycle_processor/top_procesador_multi/procesador_multiciclo/datapath/register_file/register_file[21]" type="array">
+         <obj_property name="ElementShortName">[21][31:0]</obj_property>
+         <obj_property name="ObjectShortName">[21][31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_singlecycle_processor/top_procesador_multi/procesador_multiciclo/datapath/register_file/register_file[20]" type="array">
+         <obj_property name="ElementShortName">[20][31:0]</obj_property>
+         <obj_property name="ObjectShortName">[20][31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_singlecycle_processor/top_procesador_multi/procesador_multiciclo/datapath/register_file/register_file[19]" type="array">
+         <obj_property name="ElementShortName">[19][31:0]</obj_property>
+         <obj_property name="ObjectShortName">[19][31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_singlecycle_processor/top_procesador_multi/procesador_multiciclo/datapath/register_file/register_file[18]" type="array">
+         <obj_property name="ElementShortName">[18][31:0]</obj_property>
+         <obj_property name="ObjectShortName">[18][31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_singlecycle_processor/top_procesador_multi/procesador_multiciclo/datapath/register_file/register_file[17]" type="array">
+         <obj_property name="ElementShortName">[17][31:0]</obj_property>
+         <obj_property name="ObjectShortName">[17][31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_singlecycle_processor/top_procesador_multi/procesador_multiciclo/datapath/register_file/register_file[16]" type="array">
+         <obj_property name="ElementShortName">[16][31:0]</obj_property>
+         <obj_property name="ObjectShortName">[16][31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_singlecycle_processor/top_procesador_multi/procesador_multiciclo/datapath/register_file/register_file[15]" type="array">
+         <obj_property name="ElementShortName">[15][31:0]</obj_property>
+         <obj_property name="ObjectShortName">[15][31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_singlecycle_processor/top_procesador_multi/procesador_multiciclo/datapath/register_file/register_file[14]" type="array">
+         <obj_property name="ElementShortName">[14][31:0]</obj_property>
+         <obj_property name="ObjectShortName">[14][31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_singlecycle_processor/top_procesador_multi/procesador_multiciclo/datapath/register_file/register_file[13]" type="array">
+         <obj_property name="ElementShortName">[13][31:0]</obj_property>
+         <obj_property name="ObjectShortName">[13][31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_singlecycle_processor/top_procesador_multi/procesador_multiciclo/datapath/register_file/register_file[12]" type="array">
+         <obj_property name="ElementShortName">[12][31:0]</obj_property>
+         <obj_property name="ObjectShortName">[12][31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_singlecycle_processor/top_procesador_multi/procesador_multiciclo/datapath/register_file/register_file[11]" type="array">
+         <obj_property name="ElementShortName">[11][31:0]</obj_property>
+         <obj_property name="ObjectShortName">[11][31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_singlecycle_processor/top_procesador_multi/procesador_multiciclo/datapath/register_file/register_file[10]" type="array">
+         <obj_property name="ElementShortName">[10][31:0]</obj_property>
+         <obj_property name="ObjectShortName">[10][31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_singlecycle_processor/top_procesador_multi/procesador_multiciclo/datapath/register_file/register_file[9]" type="array">
+         <obj_property name="ElementShortName">[9][31:0]</obj_property>
+         <obj_property name="ObjectShortName">[9][31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_singlecycle_processor/top_procesador_multi/procesador_multiciclo/datapath/register_file/register_file[8]" type="array">
+         <obj_property name="ElementShortName">[8][31:0]</obj_property>
+         <obj_property name="ObjectShortName">[8][31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_singlecycle_processor/top_procesador_multi/procesador_multiciclo/datapath/register_file/register_file[7]" type="array">
+         <obj_property name="ElementShortName">[7][31:0]</obj_property>
+         <obj_property name="ObjectShortName">[7][31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_singlecycle_processor/top_procesador_multi/procesador_multiciclo/datapath/register_file/register_file[6]" type="array">
+         <obj_property name="ElementShortName">[6][31:0]</obj_property>
+         <obj_property name="ObjectShortName">[6][31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_singlecycle_processor/top_procesador_multi/procesador_multiciclo/datapath/register_file/register_file[5]" type="array">
+         <obj_property name="ElementShortName">[5][31:0]</obj_property>
+         <obj_property name="ObjectShortName">[5][31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_singlecycle_processor/top_procesador_multi/procesador_multiciclo/datapath/register_file/register_file[4]" type="array">
+         <obj_property name="ElementShortName">[4][31:0]</obj_property>
+         <obj_property name="ObjectShortName">[4][31:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_singlecycle_processor/top_procesador_multi/procesador_multiciclo/datapath/register_file/register_file[3]" type="array">
+         <obj_property name="ElementShortName">[3][31:0]</obj_property>
+         <obj_property name="ObjectShortName">[3][31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_singlecycle_processor/top_procesador_multi/procesador_multiciclo/datapath/register_file/register_file[2]" type="array">
+         <obj_property name="ElementShortName">[2][31:0]</obj_property>
+         <obj_property name="ObjectShortName">[2][31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_singlecycle_processor/top_procesador_multi/procesador_multiciclo/datapath/register_file/register_file[1]" type="array">
+         <obj_property name="ElementShortName">[1][31:0]</obj_property>
+         <obj_property name="ObjectShortName">[1][31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_singlecycle_processor/top_procesador_multi/procesador_multiciclo/datapath/register_file/register_file[0]" type="array">
+         <obj_property name="ElementShortName">[0][31:0]</obj_property>
+         <obj_property name="ObjectShortName">[0][31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_singlecycle_processor/top_procesador_multi/procesador_multiciclo/datapath/register_file/register_file[31]" type="array">
+         <obj_property name="ElementShortName">[31][31:0]</obj_property>
+         <obj_property name="ObjectShortName">[31][31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_singlecycle_processor/top_procesador_multi/procesador_multiciclo/datapath/register_file/register_file[30]" type="array">
+         <obj_property name="ElementShortName">[30][31:0]</obj_property>
+         <obj_property name="ObjectShortName">[30][31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_singlecycle_processor/top_procesador_multi/procesador_multiciclo/datapath/register_file/register_file[29]" type="array">
+         <obj_property name="ElementShortName">[29][31:0]</obj_property>
+         <obj_property name="ObjectShortName">[29][31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_singlecycle_processor/top_procesador_multi/procesador_multiciclo/datapath/register_file/register_file[28]" type="array">
+         <obj_property name="ElementShortName">[28][31:0]</obj_property>
+         <obj_property name="ObjectShortName">[28][31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_singlecycle_processor/top_procesador_multi/procesador_multiciclo/datapath/register_file/register_file[27]" type="array">
+         <obj_property name="ElementShortName">[27][31:0]</obj_property>
+         <obj_property name="ObjectShortName">[27][31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_singlecycle_processor/top_procesador_multi/procesador_multiciclo/datapath/register_file/register_file[26]" type="array">
+         <obj_property name="ElementShortName">[26][31:0]</obj_property>
+         <obj_property name="ObjectShortName">[26][31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_singlecycle_processor/top_procesador_multi/procesador_multiciclo/datapath/register_file/register_file[25]" type="array">
+         <obj_property name="ElementShortName">[25][31:0]</obj_property>
+         <obj_property name="ObjectShortName">[25][31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_singlecycle_processor/top_procesador_multi/procesador_multiciclo/datapath/register_file/register_file[24]" type="array">
+         <obj_property name="ElementShortName">[24][31:0]</obj_property>
+         <obj_property name="ObjectShortName">[24][31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_singlecycle_processor/top_procesador_multi/procesador_multiciclo/datapath/register_file/register_file[23]" type="array">
+         <obj_property name="ElementShortName">[23][31:0]</obj_property>
+         <obj_property name="ObjectShortName">[23][31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_singlecycle_processor/top_procesador_multi/procesador_multiciclo/datapath/register_file/register_file[22]" type="array">
+         <obj_property name="ElementShortName">[22][31:0]</obj_property>
+         <obj_property name="ObjectShortName">[22][31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_singlecycle_processor/top_procesador_multi/procesador_multiciclo/datapath/register_file/register_file[21]" type="array">
+         <obj_property name="ElementShortName">[21][31:0]</obj_property>
+         <obj_property name="ObjectShortName">[21][31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_singlecycle_processor/top_procesador_multi/procesador_multiciclo/datapath/register_file/register_file[20]" type="array">
+         <obj_property name="ElementShortName">[20][31:0]</obj_property>
+         <obj_property name="ObjectShortName">[20][31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_singlecycle_processor/top_procesador_multi/procesador_multiciclo/datapath/register_file/register_file[19]" type="array">
+         <obj_property name="ElementShortName">[19][31:0]</obj_property>
+         <obj_property name="ObjectShortName">[19][31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_singlecycle_processor/top_procesador_multi/procesador_multiciclo/datapath/register_file/register_file[18]" type="array">
+         <obj_property name="ElementShortName">[18][31:0]</obj_property>
+         <obj_property name="ObjectShortName">[18][31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_singlecycle_processor/top_procesador_multi/procesador_multiciclo/datapath/register_file/register_file[17]" type="array">
+         <obj_property name="ElementShortName">[17][31:0]</obj_property>
+         <obj_property name="ObjectShortName">[17][31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_singlecycle_processor/top_procesador_multi/procesador_multiciclo/datapath/register_file/register_file[16]" type="array">
+         <obj_property name="ElementShortName">[16][31:0]</obj_property>
+         <obj_property name="ObjectShortName">[16][31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_singlecycle_processor/top_procesador_multi/procesador_multiciclo/datapath/register_file/register_file[15]" type="array">
+         <obj_property name="ElementShortName">[15][31:0]</obj_property>
+         <obj_property name="ObjectShortName">[15][31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_singlecycle_processor/top_procesador_multi/procesador_multiciclo/datapath/register_file/register_file[14]" type="array">
+         <obj_property name="ElementShortName">[14][31:0]</obj_property>
+         <obj_property name="ObjectShortName">[14][31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_singlecycle_processor/top_procesador_multi/procesador_multiciclo/datapath/register_file/register_file[13]" type="array">
+         <obj_property name="ElementShortName">[13][31:0]</obj_property>
+         <obj_property name="ObjectShortName">[13][31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_singlecycle_processor/top_procesador_multi/procesador_multiciclo/datapath/register_file/register_file[12]" type="array">
+         <obj_property name="ElementShortName">[12][31:0]</obj_property>
+         <obj_property name="ObjectShortName">[12][31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_singlecycle_processor/top_procesador_multi/procesador_multiciclo/datapath/register_file/register_file[11]" type="array">
+         <obj_property name="ElementShortName">[11][31:0]</obj_property>
+         <obj_property name="ObjectShortName">[11][31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_singlecycle_processor/top_procesador_multi/procesador_multiciclo/datapath/register_file/register_file[10]" type="array">
+         <obj_property name="ElementShortName">[10][31:0]</obj_property>
+         <obj_property name="ObjectShortName">[10][31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_singlecycle_processor/top_procesador_multi/procesador_multiciclo/datapath/register_file/register_file[9]" type="array">
+         <obj_property name="ElementShortName">[9][31:0]</obj_property>
+         <obj_property name="ObjectShortName">[9][31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_singlecycle_processor/top_procesador_multi/procesador_multiciclo/datapath/register_file/register_file[8]" type="array">
+         <obj_property name="ElementShortName">[8][31:0]</obj_property>
+         <obj_property name="ObjectShortName">[8][31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_singlecycle_processor/top_procesador_multi/procesador_multiciclo/datapath/register_file/register_file[7]" type="array">
+         <obj_property name="ElementShortName">[7][31:0]</obj_property>
+         <obj_property name="ObjectShortName">[7][31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_singlecycle_processor/top_procesador_multi/procesador_multiciclo/datapath/register_file/register_file[6]" type="array">
+         <obj_property name="ElementShortName">[6][31:0]</obj_property>
+         <obj_property name="ObjectShortName">[6][31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_singlecycle_processor/top_procesador_multi/procesador_multiciclo/datapath/register_file/register_file[5]" type="array">
+         <obj_property name="ElementShortName">[5][31:0]</obj_property>
+         <obj_property name="ObjectShortName">[5][31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_singlecycle_processor/top_procesador_multi/procesador_multiciclo/datapath/register_file/register_file[4]" type="array">
+         <obj_property name="ElementShortName">[4][31:0]</obj_property>
+         <obj_property name="ObjectShortName">[4][31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_singlecycle_processor/top_procesador_multi/procesador_multiciclo/datapath/register_file/register_file[3]" type="array">
+         <obj_property name="ElementShortName">[3][31:0]</obj_property>
+         <obj_property name="ObjectShortName">[3][31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_singlecycle_processor/top_procesador_multi/procesador_multiciclo/datapath/register_file/register_file[2]" type="array">
+         <obj_property name="ElementShortName">[2][31:0]</obj_property>
+         <obj_property name="ObjectShortName">[2][31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_singlecycle_processor/top_procesador_multi/procesador_multiciclo/datapath/register_file/register_file[1]" type="array">
+         <obj_property name="ElementShortName">[1][31:0]</obj_property>
+         <obj_property name="ObjectShortName">[1][31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_singlecycle_processor/top_procesador_multi/procesador_multiciclo/datapath/register_file/register_file[0]" type="array">
+         <obj_property name="ElementShortName">[0][31:0]</obj_property>
+         <obj_property name="ObjectShortName">[0][31:0]</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject fp_name="/tb_singlecycle_processor/top_procesador_multi/programa/UARTO/send" type="logic">
+      <obj_property name="ElementShortName">send</obj_property>
+      <obj_property name="ObjectShortName">send</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_singlecycle_processor/top_procesador_multi/programa/UARTO/registro_control/instrucciones_fsm_o" type="array">
+      <obj_property name="ElementShortName">instrucciones_fsm_o[31:0]</obj_property>
+      <obj_property name="ObjectShortName">instrucciones_fsm_o[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_singlecycle_processor/top_procesador_multi/procesador_multiciclo/writedata_o" type="array">
+      <obj_property name="ElementShortName">writedata_o[31:0]</obj_property>
+      <obj_property name="ObjectShortName">writedata_o[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_singlecycle_processor/top_procesador_multi/procesador_multiciclo/adr_o" type="array">
+      <obj_property name="ElementShortName">adr_o[31:0]</obj_property>
+      <obj_property name="ObjectShortName">adr_o[31:0]</obj_property>
+   </wvobject>
+</wave_config>
