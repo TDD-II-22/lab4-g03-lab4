@@ -28,7 +28,6 @@ module module_hex_ascii(
     output logic  [31 : 0] di_proc_o
     );
     logic [31 : 0] reg_entrada;
-    logic [31 : 0] reg_salida;
     always_ff @ (posedge clk_i)begin
         if(rst_i)begin
             reg_entrada <= 0;
@@ -39,24 +38,16 @@ module module_hex_ascii(
             end
         end
     end
-    always_ff @ (posedge clk_i)begin
-        if(rst_i)begin
-            reg_salida <= 0;
-        end
-        else begin
-            if(reg_entrada < 32'h10) begin
-                reg_salida <= {24'b0, reg_entrada[7 : 0] + 48 };
-            end
-            else if ((reg_entrada >= 32'h10) && (reg_entrada < 32'h10000))begin
-                reg_salida <= {24'b0, reg_entrada[7 : 0] + 55 };
-            end
-            else begin
-                reg_salida <=  0;    
-            end
-        end
-    end
     //LOGICA DE SALIDA
     always_comb begin
-        di_proc_o = reg_salida;     
-    end
+        if(reg_entrada < 10) begin
+            di_proc_o = {24'b0, reg_entrada[7 : 0] + 48 };
+        end
+        else if (reg_entrada >= 10)begin
+            di_proc_o = {24'b0, reg_entrada[7 : 0] + 55 };
+        end
+        else begin
+            di_proc_o =  0;    
+        end
+     end
 endmodule
