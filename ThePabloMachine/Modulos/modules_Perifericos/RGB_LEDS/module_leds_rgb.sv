@@ -22,11 +22,11 @@
 
 module module_leds_rgb #(parameter real PERIODO = 1e-3)(
     
-    input   logic               clk_i,
-                                rst_i,
-                                we_i,
-                    [2 : 0]     color_i,
-    output  logic   [2 : 0]     rgb_o
+    input   logic                clk_i,
+                                 rst_i,
+                                 we_i,
+                    [31 : 0]     data_in,
+    output  logic   [2  : 0]     rgb_o
     
     );
     
@@ -55,7 +55,7 @@ module module_leds_rgb #(parameter real PERIODO = 1e-3)(
         end
         else begin
             if( we_i ) begin
-                reg_color <= color_i;
+                reg_color <= data_in[2 : 0];
             end
             else begin
                 reg_color <= reg_color;
