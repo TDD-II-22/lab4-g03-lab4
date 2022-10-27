@@ -32,6 +32,7 @@ module module_conductor_de_bus(
                           do_rom_i,
                           do_hex_ascii_i,
     output logic          we_uart_o,
+                          we_leds_rgb_o,
                           we_spi_o,
                           we_teclado_o,
                           we_segmentos_o,
@@ -52,6 +53,7 @@ module module_conductor_de_bus(
             we_timer_o      = 0;
             we_ram_o        = 0;
             we_hex_ascii_o  = 0;
+            we_leds_rgb_o   = 0;
         end
         else if((addr_i >= 32'h1000) && (addr_i<=32'h13FC))begin
             we_uart_o       = 0;
@@ -62,6 +64,7 @@ module module_conductor_de_bus(
             we_timer_o      = 0;
             we_ram_o        = we_i;
             we_hex_ascii_o  = 0;
+            we_leds_rgb_o   = 0;
         end
         else if((addr_i >= 32'h2000) && (addr_i < 32'h2004))begin
             we_uart_o       = 0;
@@ -72,6 +75,7 @@ module module_conductor_de_bus(
             we_timer_o      = 0;
             we_ram_o        = 0;
             we_hex_ascii_o  = 0;
+            we_leds_rgb_o   = 0;
         end
         else if((addr_i >= 32'h2004) && (addr_i < 32'h2008))begin
             we_uart_o       = 0;
@@ -82,6 +86,7 @@ module module_conductor_de_bus(
             we_timer_o      = 0;
             we_ram_o        = 0;
             we_hex_ascii_o  = 0;
+            we_leds_rgb_o   = 0;
         end
         else if((addr_i >= 32'h2008) && (addr_i < 32'h200C))begin
             we_uart_o       = 0;
@@ -92,6 +97,7 @@ module module_conductor_de_bus(
             we_timer_o      = 0;
             we_ram_o        = 0;
             we_hex_ascii_o  = 0;
+            we_leds_rgb_o   = 0;
         end
         else if((addr_i >= 32'h200C) && (addr_i < 32'h2010))begin
             we_uart_o       = 0;
@@ -102,6 +108,7 @@ module module_conductor_de_bus(
             we_timer_o      = 0;
             we_ram_o        = 0;
             we_hex_ascii_o  = 0;
+            we_leds_rgb_o   = 0;
         end
         else if((addr_i >= 32'h2010) && (addr_i < 32'h2014))begin
             we_uart_o       = 0;
@@ -112,6 +119,7 @@ module module_conductor_de_bus(
             we_timer_o      = we_i;
             we_ram_o        = 0;
             we_hex_ascii_o  = 0;
+            we_leds_rgb_o   = 0;
         end
         else if((addr_i >= 32'h2014) && (addr_i < 32'h2018))begin
             we_uart_o       = 0;
@@ -122,6 +130,18 @@ module module_conductor_de_bus(
             we_timer_o      = 0;
             we_ram_o        = 0;
             we_hex_ascii_o  = we_i;
+            we_leds_rgb_o   = 0;
+        end
+        else if((addr_i >= 32'h2018) && (addr_i < 32'h2022))begin
+            we_uart_o       = 0;
+            we_spi_o        = 0;
+            we_teclado_o    = 0;
+            we_segmentos_o  = 0;
+            we_leds_o       = 0;
+            we_timer_o      = 0;
+            we_ram_o        = 0;
+            we_hex_ascii_o  = 0;
+            we_leds_rgb_o   = we_i;
         end
         else if((addr_i >= 32'h2020) && (addr_i < 32'h2028))begin
             we_uart_o       = we_i;
@@ -132,6 +152,7 @@ module module_conductor_de_bus(
             we_timer_o      = 0;
             we_ram_o        = 0;
             we_hex_ascii_o  = 0;
+            we_leds_rgb_o   = 0;
         end
         else if((addr_i >= 32'h2100) && (addr_i < 32'h2104))begin
             we_uart_o       = 0;
@@ -142,6 +163,7 @@ module module_conductor_de_bus(
             we_timer_o      = 0;
             we_ram_o        = 0;
             we_hex_ascii_o  = 0;
+            we_leds_rgb_o   = 0;
         end
         else if((addr_i >= 32'h2200))begin
             we_uart_o       = 0;
@@ -152,6 +174,7 @@ module module_conductor_de_bus(
             we_timer_o      = 0;
             we_ram_o        = 0;
             we_hex_ascii_o  = 0;
+            we_leds_rgb_o   = 0;
         end
         else begin
             we_uart_o       = 0;
@@ -162,6 +185,7 @@ module module_conductor_de_bus(
             we_timer_o      = 0;
             we_ram_o        = 0;
             we_hex_ascii_o  = 0;
+            we_leds_rgb_o   = 0;
         end
     end
     //MUX
@@ -189,6 +213,9 @@ module module_conductor_de_bus(
         end
         else if((addr_i >= 32'h2014) && (addr_i < 32'h2018))begin
             di_o            = do_hex_ascii_i;
+        end
+        else if((addr_i >= 32'h2018) && (addr_i < 32'h2022))begin
+            di_o            = 0;
         end
         else if((addr_i >= 32'h2020) && (addr_i < 32'h2028))begin
             di_o            = do_uart_i;
