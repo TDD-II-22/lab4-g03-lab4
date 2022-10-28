@@ -31,7 +31,7 @@ module module_conductor_de_bus(
                           do_ram_i,
                           do_rom_i,
                           do_hex_ascii_i,
-			  do_particion1_rom_i,
+						  do_particion1_rom_i,
     output logic          we_uart_o,
                           we_leds_rgb_o,
                           we_spi_o,
@@ -45,7 +45,7 @@ module module_conductor_de_bus(
     );
     //DEMUX
     always_comb begin
-        if((addr_i >= 0) && (addr_i<=32'h07FC))begin
+        if((addr_i >= 0) && (addr_i<=32'h0FFC))begin
             we_uart_o       = 0;
             we_spi_o        = 0;
             we_teclado_o    = 0;
@@ -191,7 +191,7 @@ module module_conductor_de_bus(
     end
     //MUX
     always_comb begin
-        if((addr_i >= 0) && (addr_i <= 32'h07FC))begin
+        if((addr_i >= 0) && (addr_i <= 32'h0FFC))begin
             di_o            = do_rom_i;    
         end
         else if((addr_i >= 32'h1000) && (addr_i <= 32'h13FC))begin
@@ -227,8 +227,8 @@ module module_conductor_de_bus(
         else if((addr_i >= 32'h2200) && (addr_i < 32'h3000))begin
             di_o            = do_spi_i;
         end
-	else if((addr_i >= 32'h3000) && (addr_i < 32'h4000))begin
-            di_o            = do_particion1_rom_i;
+		else if((addr_i >= 32'h3000) && (addr_i < 32'h4000))begin
+				di_o            = do_particion1_rom_i;
         end
         else begin
             di_o            = 0;
