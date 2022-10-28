@@ -32,6 +32,12 @@ module module_conductor_de_bus(
                           do_rom_i,
                           do_hex_ascii_i,
 						  do_particion1_rom_i,
+						  do_particion2_rom_i,
+						  do_particion3_rom_i,
+						  do_particion4_rom_i,
+						  do_particion5_rom_i,
+						  do_particion6_rom_i,
+						  do_particion7_rom_i,
     output logic          we_uart_o,
                           we_leds_rgb_o,
                           we_spi_o,
@@ -229,6 +235,24 @@ module module_conductor_de_bus(
         end
 		else if((addr_i >= 32'h3000) && (addr_i < 32'h4000))begin
 				di_o            = do_particion1_rom_i;
+        end
+		else if((addr_i >= 32'h4000) && (addr_i < 32'h5000))begin
+				di_o            = do_particion2_rom_i;
+        end
+		else if((addr_i >= 32'h5000) && (addr_i < 32'h6000))begin
+				di_o            = do_particion3_rom_i;
+        end
+		else if((addr_i >= 32'h6000) && (addr_i < 32'h7000))begin
+				di_o            = do_particion4_rom_i;
+        end
+		else if((addr_i >= 32'h7000) && (addr_i < 32'h8000))begin
+				di_o            = do_particion5_rom_i;
+        end
+		else if((addr_i >= 32'h8000) && (addr_i < 32'h9000))begin
+				di_o            = do_particion6_rom_i;
+        end
+		else if((addr_i >= 32'h9000) && (addr_i < 32'h10000))begin
+				di_o            = do_particion7_rom_i;
         end
         else begin
             di_o            = 0;
