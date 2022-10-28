@@ -31,6 +31,7 @@ module module_conductor_de_bus(
                           do_ram_i,
                           do_rom_i,
                           do_hex_ascii_i,
+			  do_particion1_rom_i,
     output logic          we_uart_o,
                           we_leds_rgb_o,
                           we_spi_o,
@@ -132,7 +133,7 @@ module module_conductor_de_bus(
             we_hex_ascii_o  = we_i;
             we_leds_rgb_o   = 0;
         end
-        else if((addr_i >= 32'h2018) && (addr_i < 32'h2022))begin
+        else if((addr_i >= 32'h2018) && (addr_i < 32'h201C))begin
             we_uart_o       = 0;
             we_spi_o        = 0;
             we_teclado_o    = 0;
@@ -165,7 +166,7 @@ module module_conductor_de_bus(
             we_hex_ascii_o  = 0;
             we_leds_rgb_o   = 0;
         end
-        else if((addr_i >= 32'h2200))begin
+        else if((addr_i >= 32'h2200) && (addr_i < 32'h3000))begin
             we_uart_o       = 0;
             we_spi_o        = we_i;
             we_teclado_o    = 0;
@@ -214,7 +215,7 @@ module module_conductor_de_bus(
         else if((addr_i >= 32'h2014) && (addr_i < 32'h2018))begin
             di_o            = do_hex_ascii_i;
         end
-        else if((addr_i >= 32'h2018) && (addr_i < 32'h2022))begin
+        else if((addr_i >= 32'h2018) && (addr_i < 32'h201C))begin
             di_o            = 0;
         end
         else if((addr_i >= 32'h2020) && (addr_i < 32'h2028))begin
@@ -223,8 +224,11 @@ module module_conductor_de_bus(
         else if((addr_i >= 32'h2100) && (addr_i < 32'h2104))begin
             di_o            = do_spi_i;
         end
-        else if((addr_i >= 32'h2200))begin
+        else if((addr_i >= 32'h2200) && (addr_i < 32'h3000))begin
             di_o            = do_spi_i;
+        end
+	else if((addr_i >= 32'h3000) && (addr_i < 32'h4000))begin
+            di_o            = do_particion1_rom_i;
         end
         else begin
             di_o            = 0;
