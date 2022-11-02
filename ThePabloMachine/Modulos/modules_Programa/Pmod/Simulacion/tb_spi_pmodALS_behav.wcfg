@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="tb_spi_pmodALS_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="glbl" />
+            <top_module name="pkg_global" />
+            <top_module name="tb_spi_pmodALS" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="12308640980000fs"></ZoomStartTime>
+      <ZoomEndTime time="12315020980001fs"></ZoomEndTime>
+      <Cursor1Time time="12313955980000fs"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="210"></NameColumnWidth>
+      <ValueColumnWidth column_width="90"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="10" />
+   <wvobject fp_name="/tb_spi_pmodALS/joder_encima_tactico/SD_potente/spi_SD/registro_control/send_i" type="logic">
+      <obj_property name="ElementShortName">send_i</obj_property>
+      <obj_property name="ObjectShortName">send_i</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_spi_pmodALS/joder_encima_tactico/SD_potente/spi_SD/registro_control/proccess_i" type="logic">
+      <obj_property name="ElementShortName">proccess_i</obj_property>
+      <obj_property name="ObjectShortName">proccess_i</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_spi_pmodALS/joder_encima_tactico/SD_potente/spi_SD/registro_control/we_ex_i" type="logic">
+      <obj_property name="ElementShortName">we_ex_i</obj_property>
+      <obj_property name="ObjectShortName">we_ex_i</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_spi_pmodALS/joder_encima_tactico/SD_potente/spi_SD/registro_control/in_ex_i" type="array">
+      <obj_property name="ElementShortName">in_ex_i[11:0]</obj_property>
+      <obj_property name="ObjectShortName">in_ex_i[11:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_spi_pmodALS/joder_encima_tactico/SD_potente/spi_SD/registro_control/guardar_datos" type="array">
+      <obj_property name="ElementShortName">guardar_datos[11:0]</obj_property>
+      <obj_property name="ObjectShortName">guardar_datos[11:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_spi_pmodALS/joder_encima_tactico/SD_potente/proccess" type="logic">
+      <obj_property name="ElementShortName">proccess</obj_property>
+      <obj_property name="ObjectShortName">proccess</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_spi_pmodALS/joder_encima_tactico/SD_potente/spi_SD/registro_control/we_rx_i" type="logic">
+      <obj_property name="ElementShortName">we_rx_i</obj_property>
+      <obj_property name="ObjectShortName">we_rx_i</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_spi_pmodALS/joder_encima_tactico/SD_potente/initial_SD/process_sd_i" type="logic">
+      <obj_property name="ElementShortName">process_sd_i</obj_property>
+      <obj_property name="ObjectShortName">process_sd_i</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_spi_pmodALS/joder_encima_tactico/SD_potente/spi_SD/registro_control/cntr_str_o" type="array">
+      <obj_property name="ElementShortName">cntr_str_o</obj_property>
+      <obj_property name="ObjectShortName">cntr_str_o</obj_property>
+      <obj_property name="isExpanded"></obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_spi_pmodALS/joder_encima_tactico/SD_potente/initial_SD/pasitos" type="array">
+      <obj_property name="ElementShortName">pasitos[4:0]</obj_property>
+      <obj_property name="ObjectShortName">pasitos[4:0]</obj_property>
+   </wvobject>
+</wave_config>
