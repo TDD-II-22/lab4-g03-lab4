@@ -603,19 +603,35 @@ Este módulo no tiene parámetros
 
 
 
-
-
-
 ### 3.X Programación de Ensamblador
 
 
+El programa de ensamblador consta de 5 grandes subbloques. El primer gran subbloque consiste en dos secciones, la primera sección inicializa las direcciones para el bus de datos que se van a utilizar a lo largo del programa, para ello se asignan de forma exclusiva los registro x3 y x4. En donde x3 representa las direcciones 0x1000 (RAM) y x4 contiene las direcciones 0x2000, en donde estarán ubicadas la mayoría de los periféricos; mediante el uso de offset en x4 se reposiciona al periférico deseado. La siguiente sección consta de la impresión del logo TEC, Pablo modo God, el menú “Dale bebe” y las opciones del programa. Lo anterior se realiza mediante el llamado de la instrucción “Inicializar_impri_rom” del que se detallará más adelante. 
+
+El siguiente subbloque es donde se encuentra el menú principal y los submenús de cada operación del programa. Se les asignan a 4 registros el valor en ASCII de las teclas F1, F2, F3 y F4, las cuales son comparadas con lo presionado en el teclado. Si la tecla logra coincidir con algún registro se realiza un salto a la instrucción del modo seleccionado. El siguiente subbloque es el modo escritura, el cual utiliza la instrucción “leer_tecla” para operar; dicha instrucción se detallará más adelante. El bloque se mantiene en un bucle hasta que se presione la tecla scape. 
+
+El próximo subbloque es el encargado del sensor de luz. El proceso inicia obteniendo los valores de los switch del periférico switch, posteriormente envía los datos obtenidos al periférico timer, iniciando así el contador con los valores del switch. Una instrucción se encarga de leer constantemente el timer hasta que este termine, una vez finalizado se envía la instrucción correspondiente al registro control del SPI, a la vez iniciando dicho periférico. De igual forma una instrucción lee constantemente el registro control del SPI hasta que este finalice, una vez finalizado el proceso de obtención de datos se cargan a dos registros distintos los datos de los primeros dos registros de datos del SPI. Los cuales mediante corrimientos son procesados para obtener los datos de interés y posteriormente son concatenados en un solo registro; para finalmente ser enviados a la instrucción “Double_Dabble” (se detallará más adelante) en donde son enviados a la instrucción resultado (se detallará más adelante) para ser imprimidos a la consola en forma decimal. 
+
+Prosigue el subbloque calculadora, el cual se compone de varias secciones. La primera sección se encarga mediante un contador y condicionales de obtener la tecla presionada, evaluar si dicha tecla corresponde a un número de un mínimo de 1 número y hasta un máximo de 3 o caso contrario a una operación matemática (+, -. * , =). La segunda sección convierte a valor decimal aquellas entradas que fueron un número y es almacenada a un registro especifico dependiendo del contador, el cual indica la cantidad de números obtenidos. Dicha sección retorna a la primera para volver a obtener el dato del teclado. Así mismo, esta sección se encarga de almacenar en un registro especifico la operación seleccionada. Una vez el contador llegue a un máximo de 3 o se presione alguna operación matemática, la sección dos en vez de retornar al uno, realiza un salto a la tercera sección. El cual se encarga de concatenar los datos según su valor, es decir, si es el contador llego a 3, el primer dato guardado corresponde a centenas y así sucesivamente. Una vez finalizado retorna a la primera sección para obtener el segundo operando (en caso de no haberse realizado) o en espera de la tecla igual. Una vez leído la tecla de igual, el programa salta a la cuarta sección, el objetivo de esta sección es leer el operando almacenado en el registro especifico y realizar el cálculo matemático (suma, resta o multiplicación). La operación multiplicación se realiza mediante el método de la multiplicación rusa, es cual se realiza mediante corrimiento y condicionales. Una vez obtenido el cálculo matemático, la última sección se encarga de enviar el resultado de la operación a la instrucción “Double_Dabble” y finalmente a la instrucción resultado para ser imprimidos a la consola en forma decimal.
+
+El ultimo subbloque consta de instrucciones que se reutilizan a la largo del programa. El primero es la instrucción “Resultado”, el cual obtiene los valores devueltos por “Double_Dabble” y lo procesa para imprimir el dato carácter por carácter mediante corrimientos. La siguiente instrucción “Inicializar_impri_rom” imprime el contenido de una memoria ROM independiente a la ROM de instrucciones. Estas ROM contienen una instrucción de 32bits con una profundidad máxima de 1024 bits. La instrucción se le indica la ROM a la cual debe acceder en forma de dirección y que tan profundo deberá ir. El funcionamiento básico de la instrucción es realizar un barrido tanto fila como de columna de la ROM e ir imprimiendo los valores obtenidos. Una vez barrido todos los valores fila realiza un cambio de columna mediante un contador y repite el anterior progreso hasta llegar a la profundidad deseada. 
+
+La siguiente instrucción es la instrucción UART, se encarga de imprimir los datos deseados a la consola, para ello se carga el dato a imprimir en el registro x24 y es enviado al periférico del registro de datos del UART. Posteriormente se envía un 1 al registro de control del UART para iniciar el periférico, una instrucción lee constantemente el registro de control del UART hasta que finalice el proceso. Una vez terminado el programa, el dato queda impreso en la consola. La siguiente instrucción es “leer_tecla”, la cual como su nombre indica lee la tecla que se encuentra presionando. Esta instrucción solamente obtiene el dato del registro teclado y posteriormente sustituye dicho valor del registro por cero. Si el dato obtenido es igual a 0 vuelve a obtener el valor en el teclado, si en caso de que el valor es escape realiza un salto a “salto_linea” el cual introduce dos espacios verticales y salta al menú principal. Por último, se obtiene la instrucción “Double_Daubble”, su función principal es convertir un valor binario o hexadecimal en un valor decimal. Su funcionamiento se basa en corrimiento y suma de 3 bits. La instrucción evaluará detalladamente el dato y determinará si se debe realizar un corrimiento, si se debe sumar o se debe mantener el valor, este proceso se iterará hasta haber completado la conversión como un valor binario de 16 bits.
 
 
 
 
-## 5 Puertos Utilizados y Constraints
 
-### 5.1 Puertos Utilizados
+
+
+
+
+
+
+
+## 4 Puertos Utilizados y Constraints
+
+### 4.1 Puertos Utilizados
 
 | Señal         		| Pin   | En tarjeta    |
 | :--------------------:|:-----:| :------------:|
@@ -680,7 +696,7 @@ Este módulo no tiene parámetros
 | PS2Data_pi            | B2	| PS2_DATA      |
 
 
-### 5.2 Constraints
+### 4.2 Constraints
 
 ```sdc
 
