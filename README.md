@@ -442,7 +442,8 @@ module module_state_machine_multicycle(
 
 
 ### 3.X module_top_uart
-- Es el módulo de control de UART
+
+Es el módulo de control de de la comunicación UART
 
 
 ##### Encabezado del módulo.
@@ -461,52 +462,34 @@ module module_top_uart(
 
 ##### Parámetros
 
-- `FETCH`           = 4'b0000,
-- `DECODE`          = 4'b0001,
-- `MEMADR`          = 4'b0010,
-- `MEMREAD`         = 4'b0011,
-- `MEMWB`           = 4'b0100,
-- `MEMWRITE`        = 4'b0101,
-- `EXECUTER`        = 4'b0110,
-- `ALUWB`           = 4'b0111,
-- `EXECUTEL`        = 4'b1000,
-- `JAL`             = 4'b1001,
-- `BEQ`             = 4'b1010,
-- `EXECUTEB`        = 4'b1011;
-
+No tiene Parámetros
 
 ##### Entradas
 
-- `clk_i`:
-- `rst_i`:
-- `op_i`:
+- `clk_i`: 
+- `rst_i`: 
+- `we_proc_i`: 
+- `do_proc_i`: 
+- `addr_proc_i`: 
 
 
 ##### Salidas
 
-- `adrsrc_o`:
-- `memwrite_o`:
-- `irwrite_o`:
-- `regwrite_o`:
-- `branch_o`:
-- `pcupdate_o`:
-- `resultsrc_o`:
-- `alusrca_o`:
-- `alusrcb_o`:
-- `aluop_o`:   
-
-
-
-##### Criterios de diseño
-
+- `tx`:
+- `do_proc_o`:
 
 
 ##### Testbench
 
+El testbench de este módulo se basó en escribir datos en `do_proc_i` y verificar si se enviabana bien a la salida `do_proc_o`. Dicha tarea la hace una función llamada comprobador. Los resultados se observana en la siguiente figura.
+
+
+<img src="https://github.com/TDD-II-22/lab4-g03-lab4/blob/main/Imagenes/tb_uart.png" width="500" >
 
 
 ### 3.X module_conductor_de_bus
-- Es el módulo de la máquina de estados del procesador
+
+Módulo de control del bus de datos para llevar un orden y dar trazabilidad a los datos.
 
 
 ##### Encabezado del módulo.
@@ -553,52 +536,58 @@ Este módulo no tiene parámetros
 
 ##### Entradas
 
-- `we_i`:
-- `addr_i`:
-- `do_uart_i`:
-- `do_switches_i`:
-- `do_teclado_i`:
-- `do_timer_i`:
-- `do_spi_i`:
-- `do_ram_i`:
-- `do_rom_i`:
-- `do_rom_Pablo1_i`:
-- `do_rom_Pablo2_i`:
-- `do_rom_Pablo3_i`:
-- `do_rom_Pablo4_i`:
-- `do_rom_Pablo5_i`:
-- `do_rom_Pablo6_i`:
-- `do_rom_Pablo7_i`:
-- `do_rom_TEC_i`:
-- `do_menu1_i`:
-- `do_menu2_i`:
-- `do_menu3_i`:
-- `do_rom_img1_i`:
-- `do_rom_img2_i`:
+- `we_i`: Write Enable general 
+- `addr_i`: Dirección de address
+- `do_uart_i`: Datos del UART
+- `do_switches_i`: Datos de los switches
+- `do_teclado_i`:Datos del teclado
+- `do_timer_i`:Datos del timer
+- `do_spi_i`:Datos del SPI
+- `do_ram_i`:Datos de la RAM
+- `do_rom_i`:Datos de la ROM
+- `do_rom_Pablo1_i`:Datos de la ROM Auxiliar 1
+- `do_rom_Pablo2_i`:Datos de la ROM Auxiliar 2
+- `do_rom_Pablo3_i`:Datos de la ROM Auxiliar 3
+- `do_rom_Pablo4_i`:Datos de la ROM Auxiliar 4
+- `do_rom_Pablo5_i`:Datos de la ROM Auxiliar 5
+- `do_rom_Pablo6_i`:Datos de la ROM Auxiliar 6
+- `do_rom_Pablo7_i`:Datos de la ROM Auxiliar 7
+- `do_rom_TEC_i`:Datos de la ROM Auxiliar 8
+- `do_menu1_i`:Datos para el menu 1
+- `do_menu2_i`:Datos para el menu 2
+- `do_menu3_i`:Datos para el menu 3
+- `do_rom_img1_i`:Datos de la ROM Auxiliar 9
+- `do_rom_img2_i`:Datos de la ROM Auxiliar 10
 
 
 ##### Salidas
 
-- `we_uart_o`: 
-- `we_leds_rgb_o`: 
-- `we_spi_o`: 
-- `we_teclado_o`: 
-- `we_segmentos_o`: 
-- `we_leds_o`: 
-- `we_timer_o`: 
-- `we_ram_o`: 
-- `di_o`: 
+- `we_uart_o`: Write Enable del UART
+- `we_leds_rgb_o`: Write Enable de los LEDs RGB
+- `we_spi_o`: Write Enable del SPI
+- `we_teclado_o`: Write Enable del Teclado
+- `we_segmentos_o`: Write Enable del 7 segmentos
+- `we_leds_o`: Write Enable de los LEDs
+- `we_timer_o`: Write Enable del timer
+- `we_ram_o`: Write Enable de la RAM 
+- `di_o`: Datos de escritura/lectura
 
 
 
 ##### Criterios de diseño
 
 
+Se basa en una series de "if-else" en los cuales verifica el rango de la variable de address y dependiendo del valor de esa variable habilita el write enable del periférifico solicitado.
 
 
 ##### Testbench
 
 
+El testbench se basó en escribir datos en cada uno de las direcciones de memoria. Posteriomente se solicitan datos por medio del `addr_i` y se corrobora que la dirección solicitada por el address sea correcta y que la información de la dirección solicitada concuerde con lo que se obtiene en la salida. Esta tarea la hace una función llamada comprobador
+
+Se observa como en la salida se imprime el valor de la dirección solicitada además del estado de la variable de control llamada flag.
+
+<img src="https://github.com/TDD-II-22/lab4-g03-lab4/blob/main/Imagenes/tb_bus.png" width="500" >
 
 
 
