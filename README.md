@@ -99,28 +99,24 @@ Este módulo no tiene parámetros
 ##### Criterios de diseño
 Este módulo es el módulo rpincipal en el cual se llaman al módulo del procesador y un módulo de programa externo
 
-##### Testbench
+
 
 ### 3.X module_multicycle_processor
+
+Modulo encargado de organizar y sincronizar los módulos de control y datapath
+
 ##### Encabezado del módulo.
 
 ```SystemVerilog
-module top_multicycle_processor(
-    
-    input   logic               clk_pi,
-                                rst_pi,
-                                PS2Data_pi,
-                                PS2Clk_pi,
-                                miso_pi,
-                    [15 : 0]    sw_pi,                
-    output  logic               locked_po,
-                                tx_po,
-                                cs_ctrl_po,
-                                sck_po,
-                    [6 : 0]     display_po,
-                    [7 : 0]     display_select_po,           
-                    [2 : 0]     rgb_po,
-                    [15 : 0]    leds_po                
+module module_muticycle_processor(
+
+    input   logic               clk_i,
+                                rst_i,
+                    [31 : 0]    readdata_i,
+    output  logic               memwrite_o,
+                    [31:0]      adr_o,
+                                writedata_o
+   
     );
 ```
 
@@ -132,141 +128,103 @@ Este módulo no tiene parámetros
 
 - `clk_pi`:
 - `rst_pi`:
-- `PS2_Data_pi`:
-- `PS2_clk_pi`:
-- `miso_pi`:
-- `sw_pi` :
+- `readdata_i`:
 
 ##### Salidas
 
-- `locked_po`:
-- `tx_po`:
-- `cs_ctrl_po`:
-- `sck_po`:
-- `display_po`:
-- `display_select_po`:
-- `rgb_po`:
-- `leds_po`:
+- `memwrite:_o`:
+- `adr_o`:
+- `writedata_o`:
+
 
 
 ### 3.X module_mux2a1
-- Es el módulo encargado de llamar y llevar la sincronía de los demás módulos
+- Multiplexor 2 a 1
 
 
 ##### Encabezado del módulo.
 
 ```SystemVerilog
-module top_multicycle_processor(
+module module_mux3a1 #(parameter WIDTH = 8)(
     
-    input   logic               clk_pi,
-                                rst_pi,
-                                PS2Data_pi,
-                                PS2Clk_pi,
-                                miso_pi,
-                    [15 : 0]    sw_pi,                
-    output  logic               locked_po,
-                                tx_po,
-                                cs_ctrl_po,
-                                sck_po,
-                    [6 : 0]     display_po,
-                    [7 : 0]     display_select_po,           
-                    [2 : 0]     rgb_po,
-                    [15 : 0]    leds_po                
+    input   logic       [1 : 0]                 s_i,
+                        [WIDTH - 1: 0]          d0_i,
+                                                d1_i,
+                                                d2_i,
+    output  logic       [WIDTH - 1: 0]          y_o
+    
     );
 ```
 
 ##### Parámetros
 
-Este módulo no tiene parámetros
+- `WIDTH`: Cantidad de bits de los datos
 
 ##### Entradas
 
-- `clk_pi`:
-- `rst_pi`:
-- `PS2_Data_pi`:
-- `PS2_clk_pi`:
-- `miso_pi`:
-- `sw_pi` :
+- `s_i`:
+- `d0_i`:
+- `d1_i`:
 
 ##### Salidas
 
-- `locked_po`:
-- `tx_po`:
-- `cs_ctrl_po`:
-- `sck_po`:
-- `display_po`:
-- `display_select_po`:
-- `rgb_po`:
-- `leds_po`:
+- `y_o`:
 
 
 
 ##### Criterios de diseño
-Este módulo es el módulo rpincipal en el cual se llaman al módulo del procesador y un módulo de programa externo
+Este módulo es hace la acción de multplexor mediante una línea de código la cual es:
 
-##### Testbench
+```SystemVerilog
+    assign y_o = s_i ? d1_i : d0_i;
+```
+
+
 
 
 ### 3.X module_mux3a1
-
-
-- Es el módulo encargado de llamar y llevar la sincronía de los demás módulos
+ Multiplexor 3 a 1
 
 
 ##### Encabezado del módulo.
 
 ```SystemVerilog
-module top_multicycle_processor(
+
+module module_mux3a1 #(parameter WIDTH = 8)(
     
-    input   logic               clk_pi,
-                                rst_pi,
-                                PS2Data_pi,
-                                PS2Clk_pi,
-                                miso_pi,
-                    [15 : 0]    sw_pi,                
-    output  logic               locked_po,
-                                tx_po,
-                                cs_ctrl_po,
-                                sck_po,
-                    [6 : 0]     display_po,
-                    [7 : 0]     display_select_po,           
-                    [2 : 0]     rgb_po,
-                    [15 : 0]    leds_po                
+    input   logic       [1 : 0]                 s_i,
+                        [WIDTH - 1: 0]          d0_i,
+                                                d1_i,
+                                                d2_i,
+    output  logic       [WIDTH - 1: 0]          y_o
+    
     );
+
 ```
 
 ##### Parámetros
 
-Este módulo no tiene parámetros
+- `WIDTH`: Cantidad de bits de los datos
 
 ##### Entradas
 
-- `clk_pi`:
-- `rst_pi`:
-- `PS2_Data_pi`:
-- `PS2_clk_pi`:
-- `miso_pi`:
-- `sw_pi` :
+- `s_i`:
+- `d0_i`:
+- `d1_i`:
+- `d2_i`:
 
 ##### Salidas
 
-- `locked_po`:
-- `tx_po`:
-- `cs_ctrl_po`:
-- `sck_po`:
-- `display_po`:
-- `display_select_po`:
-- `rgb_po`:
-- `leds_po`:
+- `y_o`:
 
 
 
 ##### Criterios de diseño
-Este módulo es el módulo rpincipal en el cual se llaman al módulo del procesador y un módulo de programa externo
+Este módulo es hace la acción de multplexor mediante una línea de código la cual es:
 
-##### Testbench
-
-
+```SystemVerilog
+    assign y_o = s_i[1] ? d2_i : (s_i[0] ? d1_i : d0_i);
+```
 
 
 
@@ -277,22 +235,18 @@ Este módulo es el módulo rpincipal en el cual se llaman al módulo del procesa
 ##### Encabezado del módulo.
 
 ```SystemVerilog
-module top_multicycle_processor(
+module module_regfile(
     
-    input   logic               clk_pi,
-                                rst_pi,
-                                PS2Data_pi,
-                                PS2Clk_pi,
-                                miso_pi,
-                    [15 : 0]    sw_pi,                
-    output  logic               locked_po,
-                                tx_po,
-                                cs_ctrl_po,
-                                sck_po,
-                    [6 : 0]     display_po,
-                    [7 : 0]     display_select_po,           
-                    [2 : 0]     rgb_po,
-                    [15 : 0]    leds_po                
+    input   logic               clk_i,
+                                rst_i,
+                                we3_i,
+                    [4 : 0]     a1_i,
+                                a2_i,
+                                a3_i,
+                    [31 : 0]    wd3_i,
+    output  logic   [31 : 0]    rd1_o,
+                                rd2_o
+    
     );
 ```
 
@@ -302,162 +256,113 @@ Este módulo no tiene parámetros
 
 ##### Entradas
 
-- `clk_pi`:
-- `rst_pi`:
-- `PS2_Data_pi`:
-- `PS2_clk_pi`:
-- `miso_pi`:
-- `sw_pi` :
+- `clk_i`: 
+- `rst_i`: 
+- `we3_i`: 
+- `a1_i`: 
+- `a2_i`: 
+- `a3_i`: 
+- `wd3_i`: 
 
 ##### Salidas
 
-- `locked_po`:
-- `tx_po`:
-- `cs_ctrl_po`:
-- `sck_po`:
-- `display_po`:
-- `display_select_po`:
-- `rgb_po`:
-- `leds_po`:
+- `rd1_o`:
+- `rd2_o`:
 
 
 
 ##### Criterios de diseño
-Este módulo es el módulo rpincipal en el cual se llaman al módulo del procesador y un módulo de programa externo
 
-##### Testbench
-
+Modulo de control de registros
 
 
 
 
 
+### 3.X module_registro_1dato_en
 
-### 3.X module_registro1dato_en
-
-- Es el módulo encargado de llamar y llevar la sincronía de los demás módulos
 
 
 ##### Encabezado del módulo.
 
 ```SystemVerilog
-module top_multicycle_processor(
+module module_registro_1dato_en #(parameter WIDTH = 8)(
     
-    input   logic               clk_pi,
-                                rst_pi,
-                                PS2Data_pi,
-                                PS2Clk_pi,
-                                miso_pi,
-                    [15 : 0]    sw_pi,                
-    output  logic               locked_po,
-                                tx_po,
-                                cs_ctrl_po,
-                                sck_po,
-                    [6 : 0]     display_po,
-                    [7 : 0]     display_select_po,           
-                    [2 : 0]     rgb_po,
-                    [15 : 0]    leds_po                
+    input   logic                       clk_i,
+                                        rst_i,
+                                        en_i,
+                    [WIDTH - 1 : 0]     entrada_i,
+    output  logic   [WIDTH - 1 : 0]     salida_o
+    
     );
 ```
 
 ##### Parámetros
 
-Este módulo no tiene parámetros
+- `WIDTH`: Cantidad de bits de los datos
 
 ##### Entradas
 
-- `clk_pi`:
-- `rst_pi`:
-- `PS2_Data_pi`:
-- `PS2_clk_pi`:
-- `miso_pi`:
-- `sw_pi` :
+- `clk_i`:
+- `rst_i`:
+- `en_i`:
+- `entrada_i`:
+
 
 ##### Salidas
 
-- `locked_po`:
-- `tx_po`:
-- `cs_ctrl_po`:
-- `sck_po`:
-- `display_po`:
-- `display_select_po`:
-- `rgb_po`:
-- `leds_po`:
+
+- `salida_o`:
+
 
 
 
 ##### Criterios de diseño
-Este módulo es el módulo rpincipal en el cual se llaman al módulo del procesador y un módulo de programa externo
-
-##### Testbench
 
 
 
 ### 3.X module_registro2dato_en
-- Es el módulo encargado de llamar y llevar la sincronía de los demás módulos
+
 
 
 ##### Encabezado del módulo.
 
 ```SystemVerilog
-module top_multicycle_processor(
+module module_registro_2dato_en #(parameter WIDTH = 8)(
     
-    input   logic               clk_pi,
-                                rst_pi,
-                                PS2Data_pi,
-                                PS2Clk_pi,
-                                miso_pi,
-                    [15 : 0]    sw_pi,                
-    output  logic               locked_po,
-                                tx_po,
-                                cs_ctrl_po,
-                                sck_po,
-                    [6 : 0]     display_po,
-                    [7 : 0]     display_select_po,           
-                    [2 : 0]     rgb_po,
-                    [15 : 0]    leds_po                
+    input   logic                       clk_i,
+                                        rst_i,
+                                        en_i,
+                    [WIDTH - 1: 0]      entrada1_i,
+                                        entrada2_i,
+    output  logic   [WIDTH - 1: 0]      salida1_o,
+                                        salida2_o
+    
     );
 ```
 
 ##### Parámetros
 
-Este módulo no tiene parámetros
+- `WIDTH`: Cantidad de bits de los datos
 
 ##### Entradas
 
-- `clk_pi`:
-- `rst_pi`:
-- `PS2_Data_pi`:
-- `PS2_clk_pi`:
-- `miso_pi`:
-- `sw_pi` :
+- `clk_i`:
+- `rst_i`:
+- `en_i`:
+- `entrada1_i`:
+- `entrada2_i`:
+
+
 
 ##### Salidas
 
-- `locked_po`:
-- `tx_po`:
-- `cs_ctrl_po`:
-- `sck_po`:
-- `display_po`:
-- `display_select_po`:
-- `rgb_po`:
-- `leds_po`:
 
-
+- `salida1_o`:
+- `salida2_o`:
 
 ##### Criterios de diseño
-Este módulo es el módulo rpincipal en el cual se llaman al módulo del procesador y un módulo de programa externo
 
-##### Testbench
-
-
-
-
-
-##### Criterios de diseño
-Este módulo es el módulo rpincipal en el cual se llaman al módulo del procesador y un módulo de programa externo
-
-##### Testbench
 
 
 
@@ -466,28 +371,179 @@ Este módulo es el módulo rpincipal en el cual se llaman al módulo del procesa
 
 
 ### 3.X module_state_machine_multicycle
-- Es el módulo encargado de llamar y llevar la sincronía de los demás módulos
+- Es el módulo de la máquina de estados del procesador
 
 
 ##### Encabezado del módulo.
 
 ```SystemVerilog
-module top_multicycle_processor(
-    
-    input   logic               clk_pi,
-                                rst_pi,
-                                PS2Data_pi,
-                                PS2Clk_pi,
-                                miso_pi,
-                    [15 : 0]    sw_pi,                
-    output  logic               locked_po,
-                                tx_po,
-                                cs_ctrl_po,
-                                sck_po,
-                    [6 : 0]     display_po,
-                    [7 : 0]     display_select_po,           
-                    [2 : 0]     rgb_po,
-                    [15 : 0]    leds_po                
+module module_state_machine_multicycle(
+
+        input  logic                    clk_i,
+                                        rst_i,
+                        [6 : 0]         op_i,
+        output logic                    adrsrc_o,
+                                        memwrite_o,
+                                        irwrite_o,
+                                        regwrite_o,
+                                        branch_o,
+                                        pcupdate_o,
+                        [1 : 0]         resultsrc_o,
+                                        alusrca_o,
+                                        alusrcb_o,
+                                        aluop_o              
+    );
+```
+
+##### Parámetros
+
+- `FETCH`           = 4'b0000,
+- `DECODE`          = 4'b0001,
+- `MEMADR`          = 4'b0010,
+- `MEMREAD`         = 4'b0011,
+- `MEMWB`           = 4'b0100,
+- `MEMWRITE`        = 4'b0101,
+- `EXECUTER`        = 4'b0110,
+- `ALUWB`           = 4'b0111,
+- `EXECUTEL`        = 4'b1000,
+- `JAL`             = 4'b1001,
+- `BEQ`             = 4'b1010,
+- `EXECUTEB`        = 4'b1011;
+
+
+##### Entradas
+
+- `clk_i`:
+- `rst_i`:
+- `op_i`:
+
+
+##### Salidas
+
+- `adrsrc_o`:
+- `memwrite_o`:
+- `irwrite_o`:
+- `regwrite_o`:
+- `branch_o`:
+- `pcupdate_o`:
+- `resultsrc_o`:
+- `alusrca_o`:
+- `alusrcb_o`:
+- `aluop_o`:   
+
+
+
+##### Criterios de diseño
+
+
+
+
+
+
+
+### 3.X module_top_uart
+- Es el módulo de control de UART
+
+
+##### Encabezado del módulo.
+
+```SystemVerilog
+module module_top_uart(
+    input  logic  clk_i,
+                  rst_i,
+                  we_proc_i,
+           [31:0] do_proc_i,
+                  addr_proc_i,
+    output logic  tx,
+           [31:0] do_proc_o  
+    );
+```
+
+##### Parámetros
+
+- `FETCH`           = 4'b0000,
+- `DECODE`          = 4'b0001,
+- `MEMADR`          = 4'b0010,
+- `MEMREAD`         = 4'b0011,
+- `MEMWB`           = 4'b0100,
+- `MEMWRITE`        = 4'b0101,
+- `EXECUTER`        = 4'b0110,
+- `ALUWB`           = 4'b0111,
+- `EXECUTEL`        = 4'b1000,
+- `JAL`             = 4'b1001,
+- `BEQ`             = 4'b1010,
+- `EXECUTEB`        = 4'b1011;
+
+
+##### Entradas
+
+- `clk_i`:
+- `rst_i`:
+- `op_i`:
+
+
+##### Salidas
+
+- `adrsrc_o`:
+- `memwrite_o`:
+- `irwrite_o`:
+- `regwrite_o`:
+- `branch_o`:
+- `pcupdate_o`:
+- `resultsrc_o`:
+- `alusrca_o`:
+- `alusrcb_o`:
+- `aluop_o`:   
+
+
+
+##### Criterios de diseño
+
+
+
+##### Testbench
+
+
+
+### 3.X module_conductor_de_bus
+- Es el módulo de la máquina de estados del procesador
+
+
+##### Encabezado del módulo.
+
+```SystemVerilog
+module module_conductor_de_bus(
+    input  logic          we_i,
+                 [31 : 0] addr_i,
+                          do_uart_i,
+                          do_switches_i,
+                          do_teclado_i,
+                          do_timer_i,
+                          do_spi_i,
+                          do_ram_i,
+                          do_rom_i,
+						  do_rom_Pablo1_i,
+						  do_rom_Pablo2_i,
+						  do_rom_Pablo3_i,
+						  do_rom_Pablo4_i,
+						  do_rom_Pablo5_i,
+						  do_rom_Pablo6_i,
+						  do_rom_Pablo7_i,
+						  do_rom_TEC_i,
+						  do_menu1_i,
+						  do_menu2_i,
+						  do_menu3_i,
+						  do_rom_img1_i,
+						  do_rom_img2_i,
+    output logic          we_uart_o,
+                          we_leds_rgb_o,
+                          we_spi_o,
+                          we_teclado_o,
+                          we_segmentos_o,
+                          we_leds_o,
+                          we_timer_o,
+                          we_ram_o,
+                 [31 : 0] di_o
     );
 ```
 
@@ -497,28 +553,48 @@ Este módulo no tiene parámetros
 
 ##### Entradas
 
-- `clk_pi`:
-- `rst_pi`:
-- `PS2_Data_pi`:
-- `PS2_clk_pi`:
-- `miso_pi`:
-- `sw_pi` :
+- `we_i`:
+- `addr_i`:
+- `do_uart_i`:
+- `do_switches_i`:
+- `do_teclado_i`:
+- `do_timer_i`:
+- `do_spi_i`:
+- `do_ram_i`:
+- `do_rom_i`:
+- `do_rom_Pablo1_i`:
+- `do_rom_Pablo2_i`:
+- `do_rom_Pablo3_i`:
+- `do_rom_Pablo4_i`:
+- `do_rom_Pablo5_i`:
+- `do_rom_Pablo6_i`:
+- `do_rom_Pablo7_i`:
+- `do_rom_TEC_i`:
+- `do_menu1_i`:
+- `do_menu2_i`:
+- `do_menu3_i`:
+- `do_rom_img1_i`:
+- `do_rom_img2_i`:
+
 
 ##### Salidas
 
-- `locked_po`:
-- `tx_po`:
-- `cs_ctrl_po`:
-- `sck_po`:
-- `display_po`:
-- `display_select_po`:
-- `rgb_po`:
-- `leds_po`:
+- `we_uart_o`: 
+- `we_leds_rgb_o`: 
+- `we_spi_o`: 
+- `we_teclado_o`: 
+- `we_segmentos_o`: 
+- `we_leds_o`: 
+- `we_timer_o`: 
+- `we_ram_o`: 
+- `di_o`: 
 
 
 
 ##### Criterios de diseño
-Este módulo es el módulo rpincipal en el cual se llaman al módulo del procesador y un módulo de programa externo
+
+
+
 
 ##### Testbench
 
@@ -530,7 +606,7 @@ Este módulo es el módulo rpincipal en el cual se llaman al módulo del procesa
 
 
 
-## Programación de Ensamblador
+### 3.X Programación de Ensamblador
 
 
 
