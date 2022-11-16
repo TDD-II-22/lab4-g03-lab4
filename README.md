@@ -536,7 +536,7 @@ Se diseño un modulo que recibe la señal de datos y reloj del teclado y lo tras
 
 ##### Testbench
 
-
+<img src="https://github.com/TDD-II-22/lab4-g03-lab4/blob/main/Imagenes/TB_TECLADO.png">
 
 
 
@@ -575,7 +575,8 @@ Este módulo no tiene parámetros
 
 ##### Testbench
 
-
+<img src="https://github.com/TDD-II-22/lab4-g03-lab4/blob/main/Imagenes/TB_TIMER1.png">
+<img src="https://github.com/TDD-II-22/lab4-g03-lab4/blob/main/Imagenes/TB_TIMER2.png">
 
 
 
