@@ -919,6 +919,244 @@ El testbench de este módulo se basó en escribir datos en `do_proc_i` y verific
 <img src="https://github.com/TDD-II-22/lab4-g03-lab4/blob/main/Imagenes/tb_uart.png" width="500" >
 
 
+
+### 3.21.2 module_FSM_uart
+
+
+##### Encabezado del módulo.
+
+```SystemVerilog
+module module_FSM_UART(
+    input  logic           clk_i,
+                           rst_i,
+                           detector_de_flanco_i,
+                  [31 : 0] instrucciones_reg_i,
+    output logic  [2  : 0] cntrl_o
+
+    );
+```
+
+##### Parámetros
+
+- `WAIT_SEND` =2'b00;
+- `SEND`      =2'b01;
+- `DONE`      =2'b10;
+
+##### Entradas
+
+- `clk_i`: Clock
+- `rst_i`: Reset
+- `detector_de_flanco_i`: Detector de flanco
+- `instrucciones_reg_i`: Instrcción
+
+
+##### Salidas
+
+- `cntrl_o`: control
+
+
+
+
+### 3.21.3 module_detector_de_flanco
+
+
+##### Encabezado del módulo.
+
+```SystemVerilog
+module module_detector_de_flanco(
+    input   logic clk_i,
+                  rst_i,
+                  ready_i,
+    output  logic flanco_detectado_o
+    );
+```
+
+##### Parámetros
+
+No tiene parámetros
+
+##### Entradas
+
+- `clk_i`: Clock
+- `rst_i`: Reset
+- `ready_i`: Flag de ready
+- `instrucciones_reg_i`: Instrcción
+
+
+##### Salidas
+
+- `flanco_detectado_o`: Flag de flanco detectado
+
+
+### 3.21.4 module_control_uart
+
+
+##### Encabezado del módulo.
+
+```SystemVerilog
+module module_control_uart(
+    input  logic          clk_i,
+                          rst_i,
+                 [2  : 0] cntrl_i,
+                 [31 : 0] instrucciones_reg_i,
+    output logic          send_o,
+                          we_fsm_o,
+                 [31 : 0] instrucciones_fsm_o
+    );
+```
+
+##### Parámetros
+
+No tiene parámetros
+
+##### Entradas
+
+- `clk_i`: Clock
+- `rst_i`: Reset
+- `cntrl_i`: Control
+- `instrucciones_reg_i`: Instrcción
+
+
+##### Salidas
+
+- `send_o`: Flag de send
+- `we_fsm_o`: Write Enable
+- `instrucciones_fsm_o`: Instrucción
+
+
+
+### 3.21.5 module_demux_uart
+
+
+##### Encabezado del módulo.
+
+```SystemVerilog
+module module_demux_uart(
+    input  logic slc_i,
+                 we_i,
+    output logic we_control_o,
+                 we_datos_o
+    );
+```
+
+##### Parámetros
+
+No tiene parámetros
+
+##### Entradas
+
+- `slc_i`: Selector
+- `we_i`: Write Enable
+
+
+##### Salidas
+
+- `we_control_o`: Write Enable Control
+- `we_datos_o`: Write Enable Datos
+
+
+### 3.21.6 module_mux_uart
+
+
+##### Encabezado del módulo.
+
+```SystemVerilog
+module module_mux_uart(
+    input  logic          slc_i,
+                 [31 : 0] data_reg_control,
+                 [7  : 0] data_reg_datos,
+    output logic [31 : 0] data_out_o
+    );
+```
+
+##### Parámetros
+
+No tiene parámetros
+
+##### Entradas
+
+- `slc_i`: Selector
+- `data_reg_control`: Data
+- `data_reg_datos`: Data
+
+
+##### Salidas
+
+- `data_out_o`: Data Salida
+
+
+### 3.21.7 module_reg_control_uart
+
+
+##### Encabezado del módulo.
+
+```SystemVerilog
+module module_reg_control_uart(
+    input  logic           clk_i,
+                           rst_i,
+                           we_micro_i,
+                           we_fsm_i,             
+    input  logic  [31 : 0] data_i,
+    input  logic  [31 : 0] instruccion_fsm_i,
+    output logic  [31 : 0] instrucciones_fsm_o 
+    );
+```
+
+##### Parámetros
+
+No tiene parámetros
+
+##### Entradas
+
+- `clk_i`: Clock
+- `rst_i`: Reset
+- `we_micro_i`: Write Enable
+- `we_fsm_i`: Write Enable
+- `data_i`: Data 
+- `instruccion_fsm_i`: Instrucción
+
+
+##### Salidas
+
+- `instrucciones_fsm_o `: Instrucción Salida
+
+
+### 3.21.8 module_reg_datos_uart
+
+
+##### Encabezado del módulo.
+
+```SystemVerilog
+    input  logic          clk_i,
+                          rst_i,
+                          we_i,
+                 [31 : 0] data_i,
+    output logic [7  : 0] data_o
+    
+    );
+```
+
+##### Parámetros
+
+No tiene parámetros
+
+##### Entradas
+
+- `clk_i`: Clock
+- `rst_i`: Reset
+- `we_i`: Write Enable
+- `data_i`: Data
+
+
+##### Salidas
+
+- `data_o `: Data salida
+
+
+
+
+
+
 ### 3.22 module_conductor_de_bus
 
 Módulo de control del bus de datos para llevar un orden y dar trazabilidad a los datos.
