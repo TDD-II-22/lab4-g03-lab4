@@ -259,15 +259,15 @@ Este módulo no tiene parámetros
 - `clk_i`: Clock
 - `rst_i`: Reset
 - `we3_i`: Write Enable
-- `a1_i`: 
-- `a2_i`: 
-- `a3_i`: 
-- `wd3_i`: 
+- `a1_i`: Puerto 1
+- `a2_i`: Puerto 2
+- `a3_i`: Puerto 3
+- `wd3_i`: Data Entrada
 
 ##### Salidas
 
-- `rd1_o`:
-- `rd2_o`:
+- `rd1_o`: Data Salida
+- `rd2_o`: Data Salida
 
 
 
@@ -415,16 +415,16 @@ Los distintos estados de la másquina de estados.
 
 ##### Salidas
 
-- `adrsrc_o`:
-- `memwrite_o`: 
-- `irwrite_o`:
-- `regwrite_o`:
-- `branch_o`:
-- `pcupdate_o`:
-- `resultsrc_o`:
-- `alusrca_o`:
-- `alusrcb_o`:
-- `aluop_o`:   
+- `adrsrc_o`: 
+- `memwrite_o`: Escritura en memoria
+- `irwrite_o`: 
+- `regwrite_o`: Registro Escritura
+- `branch_o`: Salto
+- `pcupdate_o`: Actualizador PC
+- `resultsrc_o`: Resultado
+- `alusrca_o`: ALU RCA
+- `alusrcb_o`: ALU RCB
+- `aluop_o`:   ALU operation
 
 
 
