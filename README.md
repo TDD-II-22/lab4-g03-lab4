@@ -858,9 +858,9 @@ Los distintos estados de la másquina de estados.
 
 ##### Salidas
 
-- `adrsrc_o`: 
+- `adrsrc_o`: Variable de control
 - `memwrite_o`: Escritura en memoria
-- `irwrite_o`: 
+- `irwrite_o`: Variable de control 
 - `regwrite_o`: Registro Escritura
 - `branch_o`: Salto
 - `pcupdate_o`: Actualizador PC
