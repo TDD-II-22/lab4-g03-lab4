@@ -625,7 +625,7 @@ Este módulo es hace la acción de multplexor mediante una línea de código la 
 
 
 
-### 3.X module_mux3a1
+### 3.16 module_mux3a1
  Multiplexor 3 a 1
 
 
@@ -671,7 +671,7 @@ Este módulo es hace la acción de multplexor mediante una línea de código la 
 
 
 
-### 3.X module_regfile
+### 3.17 module_regfile
 - Es el módulo encargado de llamar y llevar la sincronía de los demás módulos
 
 
@@ -722,7 +722,7 @@ Modulo de control de registros
 
 
 
-### 3.X module_registro_1dato_en
+### 3.18 module_registro_1dato_en
 
 
 
@@ -762,7 +762,7 @@ module module_registro_1dato_en #(parameter WIDTH = 8)(
 
 
 
-### 3.X module_registro2dato_en
+### 3.19 module_registro2dato_en
 
 
 
@@ -806,7 +806,7 @@ module module_registro_2dato_en #(parameter WIDTH = 8)(
 
 
 
-### 3.X module_state_machine_multicycle
+### 3.20 module_state_machine_multicycle
 - Es el módulo de la máquina de estados del procesador
 
 
@@ -873,7 +873,7 @@ Los distintos estados de la másquina de estados.
 
 
 
-### 3.X module_top_uart
+### 3.21 module_top_uart
 
 Es el módulo de control de de la comunicación UART
 
@@ -919,7 +919,7 @@ El testbench de este módulo se basó en escribir datos en `do_proc_i` y verific
 <img src="https://github.com/TDD-II-22/lab4-g03-lab4/blob/main/Imagenes/tb_uart.png" width="500" >
 
 
-### 3.X module_conductor_de_bus
+### 3.22 module_conductor_de_bus
 
 Módulo de control del bus de datos para llevar un orden y dar trazabilidad a los datos.
 
@@ -1024,7 +1024,7 @@ Se observa como en la salida se imprime el valor de la dirección solicitada ade
 
 
 
-### 3.X Programación de Ensamblador
+### 3.23 Programación de Ensamblador
 
 
 El programa de ensamblador consta de 5 grandes subbloques. El primer gran subbloque consiste en dos secciones, la primera sección inicializa las direcciones para el bus de datos que se van a utilizar a lo largo del programa, para ello se asignan de forma exclusiva los registro x3 y x4. En donde x3 representa las direcciones 0x1000 (RAM) y x4 contiene las direcciones 0x2000, en donde estarán ubicadas la mayoría de los periféricos; mediante el uso de offset en x4 se reposiciona al periférico deseado. La siguiente sección consta de la impresión del logo TEC, Pablo modo God, el menú “Dale bebe” y las opciones del programa. Lo anterior se realiza mediante el llamado de la instrucción “Inicializar_impri_rom” del que se detallará más adelante. 
