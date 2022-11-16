@@ -76,23 +76,23 @@ Este módulo no tiene parámetros
 
 ##### Entradas
 
-- `clk_pi`:
-- `rst_pi`:
-- `PS2_Data_pi`:
-- `PS2_clk_pi`:
-- `miso_pi`:
-- `sw_pi` :
+- `clk_pi`: Clock
+- `rst_pi`: Reset
+- `PS2_Data_pi`: Data PS2
+- `PS2_clk_pi`: Clock PS2
+- `miso_pi`: MISO
+- `sw_pi` : Switch
 
 ##### Salidas
 
-- `locked_po`:
-- `tx_po`:
-- `cs_ctrl_po`:
-- `sck_po`:
-- `display_po`:
-- `display_select_po`:
-- `rgb_po`:
-- `leds_po`:
+- `locked_po`: Locked
+- `tx_po`: Tansmission
+- `cs_ctrl_po`: Chip Select
+- `sck_po`: SCK
+- `display_po`: Control para 7 segmentos
+- `display_select_po`: Selector de display 7 segementos
+- `rgb_po`: RGB
+- `leds_po`: LEDs
 
 
 
@@ -126,15 +126,15 @@ Este módulo no tiene parámetros
 
 ##### Entradas
 
-- `clk_pi`:
-- `rst_pi`:
-- `readdata_i`:
+- `clk_pi`: Clock
+- `rst_pi`: Reset
+- `readdata_i`: Data leida
 
 ##### Salidas
 
-- `memwrite:_o`:
-- `adr_o`:
-- `writedata_o`:
+- `memwrite:_o`: Mem Write
+- `adr_o`: Address
+- `writedata_o`: Data de escritura
 
 
 
@@ -162,13 +162,13 @@ module module_mux3a1 #(parameter WIDTH = 8)(
 
 ##### Entradas
 
-- `s_i`:
-- `d0_i`:
-- `d1_i`:
+- `s_i`: Selector
+- `d0_i`: Dato Entrada
+- `d1_i`: Dato entrada
 
 ##### Salidas
 
-- `y_o`:
+- `y_o`: Salida
 
 
 
@@ -208,14 +208,14 @@ module module_mux3a1 #(parameter WIDTH = 8)(
 
 ##### Entradas
 
-- `s_i`:
-- `d0_i`:
-- `d1_i`:
-- `d2_i`:
+- `s_i`: Salida
+- `d0_i`: Dato entrada
+- `d1_i`: Dato entrada
+- `d2_i`: Dato entrada
 
 ##### Salidas
 
-- `y_o`:
+- `y_o`: Salida
 
 
 
@@ -256,9 +256,9 @@ Este módulo no tiene parámetros
 
 ##### Entradas
 
-- `clk_i`: 
-- `rst_i`: 
-- `we3_i`: 
+- `clk_i`: Clock
+- `rst_i`: Reset
+- `we3_i`: Write Enable
 - `a1_i`: 
 - `a2_i`: 
 - `a3_i`: 
@@ -303,21 +303,19 @@ module module_registro_1dato_en #(parameter WIDTH = 8)(
 
 ##### Entradas
 
-- `clk_i`:
-- `rst_i`:
-- `en_i`:
-- `entrada_i`:
+- `clk_i`: Clock
+- `rst_i`: Reset
+- `en_i`: Enable
+- `entrada_i`: Entrada
 
 
 ##### Salidas
 
 
-- `salida_o`:
+- `salida_o`: Salida
 
 
 
-
-##### Criterios de diseño
 
 
 
@@ -347,24 +345,19 @@ module module_registro_2dato_en #(parameter WIDTH = 8)(
 
 ##### Entradas
 
-- `clk_i`:
-- `rst_i`:
-- `en_i`:
-- `entrada1_i`:
-- `entrada2_i`:
+- `clk_i`: Clock
+- `rst_i`: Reset
+- `en_i`: Enable
+- `entrada1_i`: Entrada 1
+- `entrada2_i`: Entrada 2
 
 
 
 ##### Salidas
 
 
-- `salida1_o`:
-- `salida2_o`:
-
-##### Criterios de diseño
-
-
-
+- `salida1_o`: Data Salida 1
+- `salida2_o`: Data Salida 2
 
 
 
@@ -397,31 +390,33 @@ module module_state_machine_multicycle(
 
 ##### Parámetros
 
-- `FETCH`           = 4'b0000,
-- `DECODE`          = 4'b0001,
-- `MEMADR`          = 4'b0010,
-- `MEMREAD`         = 4'b0011,
-- `MEMWB`           = 4'b0100,
-- `MEMWRITE`        = 4'b0101,
-- `EXECUTER`        = 4'b0110,
-- `ALUWB`           = 4'b0111,
-- `EXECUTEL`        = 4'b1000,
-- `JAL`             = 4'b1001,
-- `BEQ`             = 4'b1010,
-- `EXECUTEB`        = 4'b1011;
+Los distintos estados de la másquina de estados.
+
+- `FETCH`           = 4'b0000
+- `DECODE`          = 4'b0001
+- `MEMADR`          = 4'b0010
+- `MEMREAD`         = 4'b0011
+- `MEMWB`           = 4'b0100
+- `MEMWRITE`        = 4'b0101
+- `EXECUTER`        = 4'b0110
+- `ALUWB`           = 4'b0111
+- `EXECUTEL`        = 4'b1000
+- `JAL`             = 4'b1001
+- `BEQ`             = 4'b1010
+- `EXECUTEB`        = 4'b1011
 
 
 ##### Entradas
 
-- `clk_i`:
-- `rst_i`:
-- `op_i`:
+- `clk_i`: Clock
+- `rst_i`: Reset
+- `op_i`: Codigo operación 
 
 
 ##### Salidas
 
 - `adrsrc_o`:
-- `memwrite_o`:
+- `memwrite_o`: 
 - `irwrite_o`:
 - `regwrite_o`:
 - `branch_o`:
@@ -430,12 +425,6 @@ module module_state_machine_multicycle(
 - `alusrca_o`:
 - `alusrcb_o`:
 - `aluop_o`:   
-
-
-
-##### Criterios de diseño
-
-
 
 
 
@@ -466,17 +455,17 @@ No tiene Parámetros
 
 ##### Entradas
 
-- `clk_i`: 
-- `rst_i`: 
-- `we_proc_i`: 
-- `do_proc_i`: 
-- `addr_proc_i`: 
+- `clk_i`: Clock
+- `rst_i`: Reset
+- `we_proc_i`: Write Enable del proceso
+- `do_proc_i`: Data
+- `addr_proc_i`: Address 
 
 
 ##### Salidas
 
-- `tx`:
-- `do_proc_o`:
+- `tx`: transmission
+- `do_proc_o`: Data
 
 
 ##### Testbench
