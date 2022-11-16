@@ -101,7 +101,7 @@ Este módulo es el módulo rpincipal en el cual se llaman al módulo del procesa
 
 
 
-### 3.X module_multicycle_processor
+### 3.3 module_multicycle_processor
 
 Modulo encargado de organizar y sincronizar los módulos de control y datapath
 
@@ -136,9 +136,451 @@ Este módulo no tiene parámetros
 - `adr_o`: Address
 - `writedata_o`: Data de escritura
 
+### 3.4 module_alu
+Este module se encarga de tomar dos datos de 32 bits y dar una salida dependiendo de de los datos de control que se le ingresan
 
 
-### 3.X module_mux2a1
+##### Encabezado del módulo.
+
+```SystemVerilog
+module module_alu(
+
+    input  logic    [31 : 0]        dato1_i,
+                                    dato2_i,
+                    [2 : 0]         alucontrol_i,
+    output logic                    zero_o,
+                    [31 : 0]        aluout_o
+    
+    );
+```
+
+##### Parámetros
+
+Este módulo no tiene parámetros
+
+##### Entradas
+
+- `dato1_i`: Dato de entrada de 32 bits
+- `dato2_i`: Dato de entrada de 32 bits
+- `alucontrol_i`: Dato de control de 3 bits
+
+##### Salidas
+
+- `zero_o`: Dato de salida de 1 bits para flag de zero
+- `aluout_o`: Salida de 32 bits. 
+
+
+##### Criterios de diseño
+Se diseño un alu con 8 opciones de control
+
+
+### 3.5 module_alu_decoder
+Este modulo se encarga de dar la salida de control para el alu.
+
+##### Encabezado del módulo.
+
+```SystemVerilog
+module module_alu_decoder (
+
+    input   logic                   opb5_i,
+    input   logic   [2 : 0]         funct3_i,
+    input   logic                   funct7b5_i,
+    input   logic   [1 : 0]         aluop_i,
+    output  logic   [2 : 0]         alucontrol_o
+ 
+    );
+```
+
+##### Parámetros
+
+Este módulo no tiene parámetros
+
+##### Entradas
+
+- `opb5_i`: Dato de entrada de 1 bits.
+- `funct3_i`: Dato de entrada de 3 bits.
+- `funct7b5_i`: Dato de entrada de 1 bits.
+- `aluop_i`: Dato de entrada de 2 bits para seleccionar la funcionalidad.
+
+##### Salidas
+
+- `alucontrol_o`: Sdalida de 3 bits para el control de la alu.
+
+### 3.6 module_controller
+Este modulo es el controlador principal del procesador multiciclos. 
+
+##### Encabezado del módulo.
+
+```SystemVerilog
+module module_controller (
+    
+        input  logic                    clk_i,
+                                        rst_i,
+                                        zero_i,
+                                        funct7b5_i,
+                        [2 : 0]         funct3_i,
+                        [6 : 0]         op_i,
+        output logic                    adrsrc_o,
+                                        memwrite_o,
+                                        irwrite_o,
+                                        regwrite_o,
+                                        pcwrite_o,
+                                        ctlzero_o,
+                        [1 : 0]         resultsrc_o,
+                                        alusrca_o,
+                                        alusrcb_o,
+                                        immscr_o,
+                        [2 : 0]         alucontrol_o
+                                        
+    );
+```
+
+##### Parámetros
+
+Este módulo no tiene parámetros
+
+##### Entradas
+
+- `clk_i`: Señal de entrada de reloj.
+- `rst_i`: Señal de entrada de reset.
+- `zero_i`: Señal de netrada de flag zero.
+- `funct7b5_i`: Señal de entrada de un bits.
+- `funct3_i`: Señal de entrada de 3 bits.
+- `op_i` : Datos de entarada de 7 bits de operacion.
+
+##### Salidas
+
+- `adrsrc_o`: Señal de salida para el addres.
+- `memwrite_o`: Señal de salida para escribir en la memoria.
+- `irwrite_o`: Señal de salida para escritura.
+- `regwrite_o`: Señal de salida para escritura del registro.
+- `pcwrite_o`: Señal de salida para la escritura del Program counter.
+- `ctlzero_o`: Señal de salida para el controlador.
+- `resultsrc_o`: Señal de salida de 2 bits de resultados.
+- `alusrca_o`: Señal de salida de el dato 1 de la alu.
+- `alusrcb_o`: Señal de salida de el dato 2 de la alu.
+- `immscr_o`: Señal de salida de 1 bits.
+- `alucontrol_o`: Señal de salida de 3 bits del control para la alu.
+
+### 3.7 module_datapath
+Este modulo controla el datapath.
+
+##### Encabezado del módulo.
+
+```SystemVerilog
+module module_datapath (
+
+        input logic                 clk_i, 
+                                    rst_i,
+                                    adrsrc_i, 
+                                    regwrite_i,
+                                    pcwrite_i,
+                                    irwrite_i,
+                                    ctlzero_i,
+                        [1:0]       resultsrc_i,
+                                    immsrc_i,
+                                    alusrca_i,
+                                    alusrcb_i,
+                        [2:0]       alucontrol_i,
+                        [31:0]      readdata_i,
+        output logic                zero_o,
+                                    funct7_o,
+                        [6 : 0]     op_o,
+                        [2 : 0]     funct3_o,
+                        [31:0]      adr_o,
+                                    writedata_o
+        );
+```
+
+##### Parámetros
+
+Este módulo no tiene parámetros
+
+##### Entradas
+
+- `clk_i`: Señal de entrada de reloj.
+- `rst_i`: Señal de entrada de reset.
+- `adrsrc_i`: Señal de entrada de addres.
+- `regwrite_i`: Señal de entrada para escritura de registro.
+- `pcwrite_i`: Señal de entrada para enable de program counter.
+- `irwrite_i` : Señal de entrada de enable.
+- `ctlzero_i` : Señal de entrada de flag zero.
+- `resultsrc_i` : Señal de 2 bits de los resultados.
+- `immsrc_i` : Señal de entrada de 1 bits.
+- `alusrca_i` : Señal de entrada de dato 1 de la alu.
+- `alusrcb_i` : Señal de entrada de dato 2 de la alu.
+- `alucontrol_i` : Señal de 3 bits del control de la alu.
+- `readdata_i` : Datos de 32 bits.
+
+##### Salidas
+
+- `zero_o`: Señal de salida de flag zero.
+- `funct7_o`: Señal de salida de 1 bits.
+- `op_o`: Señal de salida de 7 bits de operacion.
+- `funct3_o`: Señal de salida de 3 bits de funcion.
+- `adr_o`: Señal de datos de 32 bits de la direccion.
+- `writedata_o`: Señal de write enable de datos.
+
+### 3.8 module_deco_tipob
+Este es un modulo deco basico.
+
+##### Encabezado del módulo.
+
+```SystemVerilog
+module module_deco_tipob(
+
+    input   logic       [2 : 0]     funct3_i,
+    output  logic                   ctlzero_o
+    
+    );
+```
+
+##### Parámetros
+
+Este módulo no tiene parámetros
+
+##### Entradas
+
+- `funct3_i`: Señal de datos de 3 bits para elección.
+
+##### Salidas
+
+- `locked_po`: Señal de salida del deco.
+
+### 3.9 module_extend
+Este modulo recibe una intruccion de entrada y devuelve otra de salida.
+
+##### Encabezado del módulo.
+
+```SystemVerilog
+module module_extend(
+
+    input   logic   [31:7]      instr_i,
+                    [1:0]       immsrc_i,
+    output  logic   [31:0]      immext_o
+    
+    );
+```
+
+##### Parámetros
+
+Este módulo no tiene parámetros
+
+##### Entradas
+
+- `instr_i`: Señal de datos de entrada de intruccion.
+- `immsrc_i`: Señal de entrada de 1 bits.
+
+##### Salidas
+
+- `immext_o`: Señal de salida de 32 bits de intruccion.
+
+### 3.10 module_external_program
+Este modulo lleva el control del bus y de la memoria ROM.
+
+##### Encabezado del módulo.
+
+```SystemVerilog
+module module_external_program(
+    
+    input   logic               clk_i,
+                                rst_i,
+                                memwrite_i,
+                                PS2Data_i,
+                                PS2Clk_i,
+                                miso_i,
+                    [15 : 0]    sw_i,
+                    [31 : 0]    adr_i,
+                                writeddata_i,
+    output  logic               tx_o,
+                                cs_ctrl_o,
+                                sck_o,
+                    [2 : 0]     rgb_o,
+                    [6 : 0]     display_o,
+                    [7 : 0]     display_select_o,
+                    [15 : 0]    leds_o,
+                    [31 : 0]    readdata_o  
+            
+    );
+```
+
+##### Parámetros
+
+Este módulo no tiene parámetros
+
+##### Entradas
+
+- `clk_i`: Señal de entrada de reloj.
+- `rst_i`: Señal de entrada de reset.
+- `memwrite_i`: Señal de entrada de enable de memoria.
+- `PS2Data_i`: Señal de entrada de datos de teclado.
+- `PS2Clk_i`: Señal de entrada de reloj de teclado.
+- `miso_i` : Señal de entrada de MISO.
+- `sw_i` : Señal de datod de 16 bits de los switchs.
+- `adr_i` : Señal de datos de dirección.
+- `writeddata_i` : Señal de enable de datos.
+
+##### Salidas
+
+- `tx_o`: Señal de salida de 1 bits.
+- `cs_ctrl_o`: Señal de salida de control.
+- `sck_o`: Señal de salida 1 bits.
+- `rgb_o`: Señal de salida de 3 bits para control de leds RGB.
+- `display_o`: Señal de datos de salida de 7 bits para display.
+- `display_select_o`: Señal de datos de salida de 8 bits para la seleccion de display.
+- `leds_o`: Señal de  datos de salida  de 16 bits para los leds.
+- `readdata_o`: Señal de datos de salida para datos de lectura.
+
+### 3.11 module_instr_decoder
+Este modulo indica las intrucciones para el decoder.
+
+##### Encabezado del módulo.
+
+```SystemVerilog
+module module_instr_decoder(
+
+    input   logic       [6 : 0]     op_i,
+    output   logic      [1 : 0]     immscr_o
+    
+    );
+```
+
+##### Parámetros
+
+Este módulo no tiene parámetros
+
+##### Entradas
+
+- `op_i`: Señal de entrada de 7 bits para seleccionar la operación.
+
+##### Salidas
+
+- `immscr_o`: Señal de salida de 2 bits con la salida seleccionada.
+
+
+### 3.12 module_memoria
+Este modulo crea la memoria RAM.
+
+
+##### Encabezado del módulo.
+
+```SystemVerilog
+module module_memoria(
+
+    input   logic                           clk_i,
+                                            rst_i,
+                                            we_i,
+                        [7 : 0]             addr_i,
+                                            data_in_i,
+    output  logic       [31 : 0]            data_out_o
+   
+    );
+```
+
+##### Parámetros
+
+Este módulo no tiene parámetros
+
+##### Entradas
+
+- `clk_i`: Señal de entrada para reloj.
+- `rst_i`: Señal de entrada para reset.
+- `we_i`: Señal de entrada de write enable.
+- `addr_i`: Señal de entrada de 8 bits para direccion.
+- `data_in_i`: Señal de entrada de 8 bits para datos.
+
+##### Salidas
+
+- `data_out_o`: Señal de datos de salida de 32 bits.
+
+### 3.13 module_teclado
+
+Este modulo se encarga de recibir los datos del teclado y trasnformarlos a ASCII.
+
+
+##### Encabezado del módulo.
+
+```SystemVerilog
+module module_teclado(
+    input logic           clk_i,
+                          rst_i,
+                          we_i,
+                          PS2Data,
+                          PS2Clk,
+                 [31 : 0] data_i,      
+    output logic [31 : 0] data_o
+    );
+```
+
+##### Parámetros
+
+Este módulo no tiene parámetros
+
+##### Entradas
+
+- `clk_i`: Señal de entrada de reloj.
+- `rst_i`: Señal de entrada de reset.
+- `we_i`: Señal de entrada de write enable.
+- `PS2Data`: Señal de entrada de datos del teclado.
+- `PS2Clk`: Señal de entrada de reloj del teclado.
+- `data_i` : Señal de entrada de datos de 32 bits.
+
+##### Salidas
+
+- `data_o`: Señal de datos de salida de 32 bits
+
+
+
+##### Criterios de diseño
+Se diseño un modulo que recibe la señal de datos y reloj del teclado y lo trasforma a codigo ASCII para ser leidos correctamente.
+
+##### Testbench
+
+
+
+
+
+### 3.14 module_timer
+Este modulo es un simple timer.
+
+
+##### Encabezado del módulo.
+
+```SystemVerilog
+module module_timer(
+    input logic           clk_i,
+                          rst_i,
+                          we_i,
+                 [31 : 0] data_i,
+    output logic [31 : 0] data_o  
+    );
+```
+
+##### Parámetros
+
+Este módulo no tiene parámetros
+
+##### Entradas
+
+- `clk_i`: Señal de entrada de reloj.
+- `rst_i`: Señal de entrada de reset.
+- `we_i`: Señal de entrada de write enable.
+- `data_i`: Señal de entrada de datos de 32 bits.
+
+##### Salidas
+
+- `data_o`: Señal de entrada de salida de 32 bits.
+
+
+
+##### Testbench
+
+
+
+
+
+
+### 3.15 module_mux2a1
 - Multiplexor 2 a 1
 
 
