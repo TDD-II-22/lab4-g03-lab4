@@ -565,7 +565,7 @@ Este módulo no tiene parámetros
 - `clk_i`: Señal de entrada de reloj.
 - `rst_i`: Señal de entrada de reset.
 - `we_i`: Señal de entrada de write enable.
-- `data_i`: Señal de entrada de datos de 32 bits.
+- `data_i`: Señal de salida de datos de 32 bits.
 
 ##### Salidas
 
